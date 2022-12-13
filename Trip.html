@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trip</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        body{
+            background-color: #F6F6F6;
+        }
+
+        .logo{
+            margin-right: 48px;
+        }
+
+        header{
+            width: 100%;
+            height: 60px;
+            background-color: rgb(255,255,255,0.2);
+            backdrop-filter: blur(5px);
+
+            font-family: 'Roboto', sans-serif;
+            font-size: 20px;
+            font-weight: 500;
+            color: #D0D0D0;
+            box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.1);
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .site-header{
+            width: 1200px;
+            height: 24px;
+            margin-left: auto;
+            margin-right: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .site-nav ul{
+            list-style: none;
+            display: flex;
+        }
+
+        .site-nav a{
+            text-decoration: none;
+            color: #D0D0D0;
+            padding-right: 24px;
+        }
+
+        .site-nav .click{
+            font-family: 'Roboto', sans-serif;
+            font-size: 20px;
+            font-weight: 700;
+            color:#777777;
+        }
+
+        .site-nav a:hover{
+            color:#777777;
+            font-weight: 700;
+        }
+
+        .navigation {
+            height: 600px;
+            width: 100vw;
+            display: flex;
+            flex-flow: row nowrap;
+        }
+
+        .navigation a {
+            text-decoration: none;
+            color: #fff;
+            flex-grow: 1;
+            flex-basis: 0;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+
+            transition: flex-grow 0.3s ease;
+        }
+
+        .navigation a h1{
+            opacity: 0;
+            font-size: 48px;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 700;
+            color: white;
+            transition: opacity 0.3s ease;
+        }
+
+        .navigation a p{
+            opacity: 0;
+            font-size: 20px;
+            color: white;
+            transition: opacity 0.2s ease;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+        }
+
+        .navigation :hover h1, a:hover p{
+            opacity: 1;
+        }
+
+        .navigation .overlay{
+            width:100%;
+            height:100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.5s ease;
+        }
+
+        .navigation a:hover .overlay{
+            background-color: rgba(0,0,0,0.5);
+        }
+        
+        .navigation a:hover {
+            flex-grow: 3;
+        }
+
+        .img1:hover{
+            filter:brightness(100%);
+        }
+
+        .img2:hover{
+            filter:brightness(100%);
+        }
+
+        .img3:hover{
+            filter:brightness(100%);
+        }
+
+        .img1 {
+            background-image: url(https://i.postimg.cc/2jvrGV0h/image.jpg);
+            filter:brightness(70%);
+        }
+
+        .img2 {
+            background-image: url(https://i.postimg.cc/Y9FKdszM/image.jpg);
+            filter:brightness(70%);
+        }
+
+        .img3 {
+            background-image: url(https://i.postimg.cc/DztR4ckD/image.jpg);
+            filter:brightness(70%);
+        }
+
+        /* 푸터 */
+        footer{
+            color: #E2E2E2;
+            background-color: #444444;
+            width: 100%;
+            height: 300px;
+            margin-top: 110px;
+            padding-top: 25px;
+            padding-bottom: 25px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap:wrap;
+        }
+
+        .footA{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-bottom: 16px;
+
+            border-bottom: solid 1px #F0F0F0;
+        }
+
+        .footer-nav ul{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .footer-nav li{
+            list-style: none;
+        }
+
+        .footer-nav a{
+            text-decoration: none;
+            color: #E2E2E2;
+            font-size: 16px;
+            font-family: 'Noto Sans KR', sans-serif;
+            font-weight: 400;
+
+            margin-right: 24px;
+        }
+
+        .icons ul{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .icons li{
+            list-style: none;
+        }
+
+        .icons a{
+            margin-right: 4px;
+        }
+
+        .footB{
+            width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .footB p{
+            font-size: 12px;
+            font-family: 'Noto Sans KR', sans-serif;
+            font-weight: 400;
+
+            line-height: 24px;
+        }
+
+        .footC{
+            width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .site{
+            width: 200px;
+        }
+
+        .site ul{
+            list-style: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .conA{
+            margin-top: 100px;
+            width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .conA h2{
+            font-size: 36px;
+            font-family: 'Noto Sans KR', sans-serif;
+            font-weight: 700;
+            color: #232323;
+            text-align: center;
+            margin-bottom: 16px;
+        }
+
+        /* 탭메뉴 */
+        .tabmenu {
+            font-size: 0;
+            text-align: center;
+        }
+
+        .tabmenu input[type="radio"] {
+            display: none;
+        }
+
+        .tabmenu label {
+            display: inline-block;
+            width: 97px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            margin-right: 12px;
+            margin-bottom: 66px;
+            background: #D9D9D9;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 20px;
+            font-family: 'Noto Sans KR', sans-serif;
+            font-weight: 400;
+            cursor: pointer;
+            color:#fff;
+        }
+
+        .tabmenu > div {
+            display: none;
+            min-height: 300px;
+            /* padding: 20px; */
+            /* background: blue; */
+            font-size: 60px;
+            color: #fff;
+        }
+
+        .tabmenu input[type="radio"]:checked + label {
+            background: #338FAD;
+            font-weight: 700;
+        }
+
+        .tabmenu #tab1:checked ~ #cont1,
+        .tabmenu #tab2:checked ~ #cont2,
+        .tabmenu #tab3:checked ~ #cont3,
+        .tabmenu #tab4:checked ~ #cont4 {
+            display: block;
+        }
+
+        .card{
+            width: 385px;
+            height: 500px;
+            box-shadow: 0 4px 20px 4px rgba(0, 0, 0, 0.16);
+            border-radius: 20px;
+            overflow: hidden;
+
+            display: inline-block;
+            flex: 1 0 387px;
+            margin-bottom: 56px;
+        }
+
+        .card:hover{
+            box-shadow: 0 4px 20px 4px rgba(0, 0, 0, 0.35);
+            transform: translateY(-4px)
+        }
+
+        .card .description{
+            text-align: left;
+            padding-top: 24px;
+            padding-left: 20px;
+            background-color: #fff;
+        }
+
+        .card .description .sub{
+            font-size: 12px;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+            color: #777777;
+        }
+
+        .card .description .sub .category1{
+            font-size: 16px;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 500;
+            color: #56A3C0;
+            padding-left: 14px;
+            padding-right: 14px;
+            padding-top: 8px;
+            padding-bottom: 8px;
+            border-radius: 50px;
+            margin-right: 8px;
+
+            width: 80px;
+            height: 34px;
+            background-color: #E2E2E2;
+        }
+
+        .card .description .sub .category2{
+            font-size: 16px;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 500;
+            color: #004155;
+            padding-left: 14px;
+            padding-right: 14px;
+            padding-top: 8px;
+            padding-bottom: 8px;
+            border-radius: 50px;
+            margin-right: 8px;
+
+            width: 80px;
+            height: 34px;
+            background-color: #E2E2E2;
+        }
+
+        .card .description h3{
+            font-size: 24px;
+            font-family: 'Noto Sans KR', sans-serif;
+            font-weight: 700;
+            color: #232323;
+            line-height: 120%;
+
+            margin-top: 16px;
+            margin-bottom: 32px;
+        }
+
+        .card .description .tag{
+            font-size: 12px;
+            font-family: 'Noto Sans KR', sans-serif;
+            font-weight: 400;
+            color: #56A3C0;
+
+            padding-bottom: 20px;
+        }
+
+        .card .description img{
+            object-position: center bottom;
+        }
+
+        .trip-card{
+            text-decoration: none;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="site-header">
+        <a href="index.html" class="logo"><img src="https://i.postimg.cc/65GsQsWK/image.png" alt="travie logo"></a>
+
+        <nav class="site-nav">
+            <ul>
+                <li><a class="click" href="Trip.html">Trip</a></li>
+                <li><a href="Magazine.html">Magazine</a></li>
+                <li><a href="Newsletter.html">Newsletter</a></li>
+                <li><a href="About.html">About</a></li>
+            </ul>
+        </nav>
+      </div>
+    </header>
+
+    <div class="navigation">
+        <a class="img1" href="#">
+            <div class="overlay">
+                <h1>Luxury Bangkok</h1>
+                <p>Bangkok, Not Cheap Anymore</p>
+            </div>
+        </a>
+        <a class="img2" href="#">
+            <div class="overlay">
+                <h1>Vienna in late autumn</h1>
+                <p>To the tempo of Vienna</p>
+            </div>
+        </a>
+        <a class="img3" href="#">
+            <div class="overlay">
+                <h1>Seokmodo Island in nature</h1>
+                <p>Seokmodo Island, like the end of the year</p>
+            </div>
+        </a>
+    </div>
+
+    <div class="conA">
+        <div class="container">
+            <h2>트래비가 추천하는 여행지</h2>
+            <div class="tabmenu">
+                <input type="radio" name="tab" id="tab1" checked>
+                <label for="tab1">전체</label>
+                <input type="radio" name="tab" id="tab2">
+                <label for="tab2">해외</label>
+                <input type="radio" name="tab" id="tab3">
+                <label for="tab3">국내</label>
+                <input type="radio" name="tab" id="tab4">
+                <label for="tab4">바다</label>
+
+                <div id="cont1">
+                    <a class="trip-card" href="#">
+                    <div class="card">
+                        <div class="description">
+                            <div class="sub"><span class="category1">Abroad</span>2022.10.12</div>
+                            <h3>영혼들이 쉬다가는 곳,<br>
+                                울루루</h3>
+                            <p class="tag">#울루루 #영혼 #휴식</p>
+                        </div>
+                        <img src="https://i.postimg.cc/C1c6YyHj/image.jpg" alt="울루루" width="451px" height="350px">
+                    </div>
+                </a>
+                <a class="trip-card" href="#">
+                    <div class="card">
+                        <div class="description">
+                            <div class="sub"><span class="category2">Korea</span>2022.08.16</div>
+                            <h3>싱그럽게 여행을<Br>
+                                ‘완주’하는 법</h3>
+                            <p class="tag">#완주 #국내 #싱그러움</p>
+                        </div>
+                        <img src="https://i.postimg.cc/3rjnYdmC/image.jpg" alt="완주" width="451px" height="350px">
+                    </div>
+                </a>
+                <a class="trip-card" href="#">
+                    <div class="card">
+                        <div class="description">
+                            <div class="sub"><span class="category1">Abroad</span>2022.10.12</div>
+                            <h3>캐나다<Br>
+                                로키산맥의 3가지 보물</h3>
+                            <p class="tag">#캐나다 #로키산맥 #보물</p>
+                        </div>
+                        <img src="https://i.postimg.cc/SsFfphKv/image.jpg" alt="캐나다" width="451px" height="350px">
+                    </div>
+                </a>
+
+                <a class="trip-card" href="#">
+                    <div class="card">
+                        <div class="description">
+                            <div class="sub"><span class="category2">Korea</span>2022.10.12</div>
+                            <h3>알록달록<br>
+                                병풍도의 가을꽃 축제</h3>
+                            <p class="tag">#가을 #병풍도 #꽃</p>
+                        </div>
+                        <img src="https://i.postimg.cc/NFNXLqgY/image.jpg" alt="병풍도" width="385px" height="580px">
+                    </div>
+                </a>
+                <a class="trip-card" href="#">
+                    <div class="card">
+                        <div class="description">
+                            <div class="sub"><span class="category1">Abroad</span>2022.10.12</div>
+                            <h3>언제까지고 질리지 않을,<br>
+                                싱가포르의 클래식한 명소들</h3>
+                            <p class="tag">#클래식 #명소 #싱가포르</p>
+                        </div>
+                        <img src="https://i.postimg.cc/d04nrXQH/2.jpg" alt="싱가포르" width="451px" height="350px">
+                    </div>
+                </a>
+                <a class="trip-card" href="#">
+                    <div class="card">
+                        <div class="description">
+                            <div class="sub"><span class="category2">Korea</span>2022.10.12</div>
+                            <h3>부산<br>
+                                ‘수영구’ 한 번에 몰아보기!</h3>
+                            <p class="tag">#부산 #수영구 #바다</p>
+                        </div>
+                        <img src="https://i.postimg.cc/vZpXz959/image.jpg" alt="부산" width="451px" height="350px">
+                    </div>
+                </a>
+
+                <a class="trip-card" href="#">
+                    <div class="card">
+                        <div class="description">
+                            <div class="sub"><span class="category1">Abroad</span>2022.10.12</div>
+                            <h3>여전히 아름다운지,<Br>
+                                보홀</h3>
+                            <p class="tag">#보홀 #바다 #휴양지</p>
+                        </div>
+                        <img src="https://i.postimg.cc/KYTxYdPT/image.jpg" alt="보홀" width="451px" height="350px">
+                    </div>
+                </a>
+                <a class="trip-card" href="#">
+                    <div class="card">
+                        <div class="description">
+                            <div class="sub"><span class="category2">Korea</span>2022.10.12</div>
+                            <h3>주문도,<Br>
+                                마음이 채워지는 시간</h3>
+                            <p class="tag">#주문도 #여행 #섬</p>
+                        </div>
+                        <img src="https://i.postimg.cc/4Nj03nB8/2.jpg" alt="주문도" width="451px" height="350px">
+                    </div>
+                </a>
+                <a class="trip-card" href="#">
+                    <div class="card">
+                        <div class="description">
+                            <div class="sub"><span class="category1">Abroad</span>2022.10.12</div>
+                            <h3>지금,<br>
+                                크루즈에 올라야 할 이유</h3>
+                            <p class="tag">#크루즈 #배 #바다</p>
+                        </div>
+                        <img src="https://i.postimg.cc/vTk0DSL1/image.jpg" alt="크루즈" width="451px" height="350px">
+                    </div>
+                </a>
+
+                </div>
+
+                <div id="cont2">
+
+                    <a class="trip-card" href="#">
+                        <div class="card">
+                            <div class="description">
+                                <div class="sub"><span class="category1">Abroad</span>2022.10.12</div>
+                                <h3>이탈리아<br>
+                                    쇼핑 로드</h3>
+                                <p class="tag">#이탈리아 #쇼핑 #밀라노</p>
+                            </div>
+                            <img src="https://i.postimg.cc/zfQ0GGwz/image.jpg" alt="울루루" width="451px" height="350px">
+                        </div>
+                    </a>
+                    <a class="trip-card" href="#">
+                        <div class="card">
+                            <div class="description">
+                                <div class="sub"><span class="category1">Abroad</span>2022.08.16</div>
+                                <h3>영혼들이 쉬다가는 곳,<br>
+                                    울루루</h3>
+                                <p class="tag">#울루루 #영혼 #휴식</p>
+                            </div>
+                            <img src="https://i.postimg.cc/C1c6YyHj/image.jpg" alt="울루루" width="451px" height="350px">
+                        </div>
+                    </a>
+                    <a class="trip-card" href="#">
+                        <div class="card">
+                            <div class="description">
+                                <div class="sub"><span class="category1">Abroad</span>2022.10.12</div>
+                                <h3>그시절, 우리가<br>
+                                사랑한 홍콩</h3>
+                                <p class="tag">#홍콩 #재회 #코로나</p>
+                            </div>
+                            <img src="https://i.postimg.cc/8zmCGFSv/image.jpg" alt="홍콩" width="451px" height="350px">
+                        </div>
+                    </a>
+    
+                    <a class="trip-card" href="#">
+                        <div class="card">
+                            <div class="description">
+                                <div class="sub"><span class="category1">Abroad</span>2022.10.12</div>
+                                <h3>캐나다<Br>
+                                    로키산맥의 3가지 보물</h3>
+                                <p class="tag">#캐나다 #로키산맥 #보물</p>
+                            </div>
+                            <img src="https://i.postimg.cc/SsFfphKv/image.jpg" alt="병풍도" width="451px" height="350px">
+                        </div>
+                    </a>
+                    <a class="trip-card" href="#">
+                        <div class="card">
+                            <div class="description">
+                                <div class="sub"><span class="category1">Abroad</span>2022.10.12</div>
+                                <h3>언제까지고 질리지 않을,<br>
+                                    싱가포르의 클래식한 명소들</h3>
+                                <p class="tag">#클래식 #명소 #싱가포르</p>
+                            </div>
+                            <img src="https://i.postimg.cc/d04nrXQH/2.jpg" alt="싱가포르" width="451px" height="350px">
+                        </div>
+                    </a>
+                    <a class="trip-card" href="#">
+                        <div class="card">
+                            <div class="description">
+                                <div class="sub"><span class="category1">Abroad</span>2022.10.12</div>
+                                <h3>939일간의 기다림,<br>
+                                    타이완</h3>
+                                <p class="tag">#타이완 #10월 #939일</p>
+                            </div>
+                            <img src="https://i.postimg.cc/Vs2YSBGc/image.jpg" alt="타이완" width="451px" height="350px">
+                        </div>
+                    </a>
+    
+                    <a class="trip-card" href="#">
+                        <div class="card">
+                            <div class="description">
+                                <div class="sub"><span class="category1">Abroad</span>2022.10.12</div>
+                                <h3>여전히 아름다운지,<Br>
+                                    보홀</h3>
+                                <p class="tag">#보홀 #바다 #휴양지</p>
+                            </div>
+                            <img src="https://i.postimg.cc/KYTxYdPT/image.jpg" alt="보홀" width="451px" height="350px">
+                        </div>
+                    </a>
+                    <a class="trip-card" href="#">
+                        <div class="card">
+                            <div class="description">
+                                <div class="sub"><span class="category1">Abroad</span>2022.10.12</div>
+                                <h3>지금,<br>
+                                    크루즈에 올라야 할 이유</h3>
+                                <p class="tag">#크루즈 #배 #바다</p>
+                            </div>
+                            <img src="https://i.postimg.cc/vTk0DSL1/image.jpg" alt="크루즈" width="451px" height="350px">
+                        </div>
+                    </a>
+                    <a class="trip-card" href="#">
+                        <div class="card">
+                            <div class="description">
+                                <div class="sub"><span class="category1">Abroad</span>2022.10.12</div>
+                                <h3>'놀러 가고 싶은'<br>두바이의 도서관들</h3>
+                                <p class="tag">#도서관 #두바이 #예술</p>
+                            </div>
+                            <img src="https://i.postimg.cc/28jPSqmf/image.jpg" alt="두바이" width="451px" height="350px">
+                        </div>
+                    </a>
+
+                </div>
+
+                <div id="cont3">
+
+                    <a class="trip-card" href="#">
+                        <div class="card">
+                            <div class="description">
+                                <div class="sub"><span class="category2">Korea</span>2022.10.12</div>
+                                <h3>지구의 극치<br>
+                                조도</h3>
+                                <p class="tag">#전남 #조도 #등대</p>
+                            </div>
+                            <img src="https://i.postimg.cc/nc6Yw53w/image.jpg" alt="조도" width="451px" height="350px">
+                        </div>
+                    </a>
+                    <a class="trip-card" href="#">
+                        <div class="card">
+                            <div class="description">
+                                <div class="sub"><span class="category2">Korea</span>2022.08.16</div>
+                                <h3>싱그럽게 여행을<Br>
+                                    ‘완주’하는 법</h3>
+                                <p class="tag">#완주 #국내 #싱그러움</p>
+                            </div>
+                            <img src="https://i.postimg.cc/3rjnYdmC/image.jpg" alt="완주" width="451px" height="350px">
+                        </div>
+                    </a>
+                    <a class="trip-card" href="#">
+                        <div class="card">
+                            <div class="description">
+                                <div class="sub"><span class="category2">Korea</span>2022.10.12</div>
+                                <h3>고양을 더 특별하게<br>
+                                '행주'</h3>
+                                <p class="tag">#고양 #행주 #역사</p>
+                            </div>
+                            <img src="https://i.postimg.cc/JhRXfWZK/image.jpg" alt="고양" width="451px" height="350px">
+                        </div>
+                    </a>
+    
+                    <a class="trip-card" href="#">
+                        <div class="card">
+                            <div class="description">
+                                <div class="sub"><span class="category2">Korea</span>2022.10.12</div>
+                                <h3>알록달록<br>
+                                    병풍도의 가을꽃 축제</h3>
+                                <p class="tag">#가을 #병풍도 #꽃</p>
+                            </div>
+                            <img src="https://i.postimg.cc/NFNXLqgY/image.jpg" alt="병풍도" width="385px" height="580px">
+                        </div>
+                    </a>
+                    <a class="trip-card" href="#">
+                        <div class="card">
+                            <div class="description">
+                                <div class="sub"><span class="category2">Korea</span>2022.10.12</div>
+                                <h3>가을 출사,<Br>
+                                제주 한 컷</h3>
+                                <p class="tag">#가을 #제주도 #한컷</p>
+                            </div>
+                            <img src="https://i.postimg.cc/cLSTL2ft/image.jpg" alt="제주도" width="385px" height="580px">
+                        </div>
+                    </a>
+                    <a class="trip-card" href="#">
+                        <div class="card">
+                            <div class="description">
+                                <div class="sub"><span class="category2">Korea</span>2022.10.12</div>
+                                <h3>부산<br>
+                                    ‘수영구’ 한 번에 몰아보기!</h3>
+                                <p class="tag">#부산 #수영구 #바다</p>
+                            </div>
+                            <img src="https://i.postimg.cc/vZpXz959/image.jpg" alt="부산" width="451px" height="350px">
+                        </div>
+                    </a>
+    
+                    <a class="trip-card" href="#">
+                        <div class="card">
+                            <div class="description">
+                                <div class="sub"><span class="category2">Korea</span>2022.10.12</div>
+                                <h3>전통이 물들어 가는 곳,<br> 안동</h3>
+                                <p class="tag">#안동 #전통 #풍류</p>
+                            </div>
+                            <img src="https://i.postimg.cc/ydMcr3P3/image.jpg" alt="안동" width="451px" height="350px">
+                        </div>
+                    </a>
+                    <a class="trip-card" href="#">
+                        <div class="card">
+                            <div class="description">
+                                <div class="sub"><span class="category2">Korea</span>2022.10.12</div>
+                                <h3>주문도,<Br>
+                                    마음이 채워지는 시간</h3>
+                                <p class="tag">#주문도 #여행 #섬</p>
+                            </div>
+                            <img src="https://i.postimg.cc/4Nj03nB8/2.jpg" alt="주문도" width="451px" height="350px">
+                        </div>
+                    </a>
+                    <a class="trip-card" href="#">
+                        <div class="card">
+                            <div class="description">
+                                <div class="sub"><span class="category2">Korea</span>2022.10.12</div>
+                                <h3>'바다'에 진심인<br>포항을 만나다</h3>
+                                <p class="tag">#포항 #오션뷰 #바다</p>
+                            </div>
+                            <img src="https://i.postimg.cc/RZhhKV7k/image.jpg" alt="포항" width="451px" height="350px">
+                        </div>
+                    </a>
+
+                </div>
+
+                <div id="cont4">
+
+                    <a class="trip-card" href="#">
+                        <div class="card">
+                            <div class="description">
+                                <div class="sub"><span class="category2">Korea</span>2022.10.12</div>
+                                <h3>'바다'에 진심인<br>포항을 만나다</h3>
+                                <p class="tag">#포항 #오션뷰 #바다</p>
+                            </div>
+                            <img src="https://i.postimg.cc/RZhhKV7k/image.jpg" alt="포항" width="451px" height="350px">
+                        </div>
+                    </a>
+                    <a class="trip-card" href="#">
+                        <div class="card">
+                            <div class="description">
+                                <div class="sub"><span class="category1">Abroad</span>2022.08.16</div>
+                                <h3>괌 가족여행,<br>이것만 알면 준비 끝</h3>
+                                <p class="tag">#괌 #가족여행 #바다</p>
+                            </div>
+                            <img src="https://i.postimg.cc/bN2FJ1MW/image.jpg" alt="괌" width="451px" height="350px">
+                        </div>
+                    </a>
+                    <a class="trip-card" href="#">
+                        <div class="card">
+                            <div class="description">
+                                <div class="sub"><span class="category1">Abroad</span>2022.10.12</div>
+                                <h3>캐나다<Br>
+                                    로키산맥의 3가지 보물</h3>
+                                <p class="tag">#캐나다 #로키산맥 #보물</p>
+                            </div>
+                            <img src="https://i.postimg.cc/SsFfphKv/image.jpg" alt="캐나다" width="451px" height="350px">
+                        </div>
+                    </a>
+    
+                    <a class="trip-card" href="#">
+                        <div class="card">
+                            <div class="description">
+                                <div class="sub"><span class="category1">Abroad</span>2022.10.12</div>
+                                <h3>다시 만난<br>'푸껫'</h3>
+                                <p class="tag">#바다 #푸껫 #태국</p>
+                            </div>
+                            <img src="https://i.postimg.cc/59ZWn9Mc/image.jpg" alt="태국" width="451px" height="350px">
+                        </div>
+                    </a>
+                    <a class="trip-card" href="#">
+                        <div class="card">
+                            <div class="description">
+                                <div class="sub"><span class="category1">Abroad</span>2022.10.12</div>
+                                <h3>자연에 나를 맡기다,<br>마나도</h3>
+                                <p class="tag">#자연 #바다 #마나도</p>
+                            </div>
+                            <img src="https://i.postimg.cc/13vW7MNg/image.jpg" alt="마나도" width="451px" height="350px">
+                        </div>
+                    </a>
+                    <a class="trip-card" href="#">
+                        <div class="card">
+                            <div class="description">
+                                <div class="sub"><span class="category2">Korea</span>2022.10.12</div>
+                                <h3>부산<br>
+                                    ‘수영구’ 한 번에 몰아보기!</h3>
+                                <p class="tag">#부산 #수영구 #바다</p>
+                            </div>
+                            <img src="https://i.postimg.cc/vZpXz959/image.jpg" alt="부산" width="451px" height="350px">
+                        </div>
+                    </a>
+    
+                    <a class="trip-card" href="#">
+                        <div class="card">
+                            <div class="description">
+                                <div class="sub"><span class="category1">Abroad</span>2022.10.12</div>
+                                <h3>여전히 아름다운지,<Br>
+                                    보홀</h3>
+                                <p class="tag">#보홀 #바다 #휴양지</p>
+                            </div>
+                            <img src="https://i.postimg.cc/KYTxYdPT/image.jpg" alt="보홀" width="451px" height="350px">
+                        </div>
+                    </a>
+                    <a class="trip-card" href="#">
+                        <div class="card">
+                            <div class="description">
+                                <div class="sub"><span class="category2">Korea</span>2022.10.12</div>
+                                <h3>주문도,<Br>
+                                    마음이 채워지는 시간</h3>
+                                <p class="tag">#주문도 #여행 #섬</p>
+                            </div>
+                            <img src="https://i.postimg.cc/4Nj03nB8/2.jpg" alt="주문도" width="451px" height="350px">
+                        </div>
+                    </a>
+                    <a class="trip-card" href="#">
+                        <div class="card">
+                            <div class="description">
+                                <div class="sub"><span class="category1">Abroad</span>2022.10.12</div>
+                                <h3>지금,<br>
+                                    크루즈에 올라야 할 이유</h3>
+                                <p class="tag">#크루즈 #배 #바다</p>
+                            </div>
+                            <img src="https://i.postimg.cc/vTk0DSL1/image.jpg" alt="크루즈" width="451px" height="350px">
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- 푸터 -->
+    <footer>
+        <div class="footA">
+
+            <nav class="footer-nav">
+                <ul>
+                    <li><a href="#">회사소개</a></li>
+                    <li><a href="#">기사제보</a></li>
+                    <li><a href="#">광고문의</a></li>
+                    <li><a href="#">개인정보처리방침</a></li>
+                    <li><a href="#">이용약관</a></li>
+                    <li><a href="#">청소년보호정책</a></li>
+                    <li><a href="#">저작권보호정책</a></li>
+                    <li><a href="#">RSS</a></li>
+                </ul>
+            </nav>
+
+            <nav class="icons">
+                <ul>
+                    <li><a href="#"><img src="https://i.postimg.cc/c1BsjWkr/Frame-18.png" alt="Facebook" width="30px" height="30px"></a></li>
+                    <li><a href="#"><img src="https://i.postimg.cc/MKXpj4tH/Frame-19.png" alt="brunch" width="30px" height="30px"></a></li>
+                    <li><a href="#"><img src="https://i.postimg.cc/jq3sKcKb/Frame-20.png" alt="naver" width="30px" height="30px"></a></li>
+                    <li><a href="#"><img src="https://i.postimg.cc/gJkWbXTj/Frame-21.png" alt="youtube" width="30px" height="30px"></a></li>
+                    <li><a href="#"><img src="https://i.postimg.cc/43w3cgCK/Frame-22.png" alt="insta" width="30px" height="30px"></a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="footB">
+            <p>서울특별시 중구 무교로 16 (주)여행신문<br>
+                대표전화: 02-757-8980 I 팩스: 02-757-8983<br>
+                법인명: (주)여행신문 I 등록번호: 서울 라 00311 (2009-10-13)<br>
+                발행·편집인: 한정훈 I 대표자명: 김기남 I 청소년보호책임자:  전홍렬</p>
+        </div>
+        <div class="footC">
+            <nav class="site">
+                <ul>
+                    <li><a href="#"><img src="https://i.postimg.cc/j5bHh1X0/image.png" alt="site1"></a></li>
+                    <li><a href="#"><img src="https://i.postimg.cc/VNmfzBsB/image.png" alt="site1"></a></li>
+                </ul>
+            </nav>
+        </div>
+</footer>
+    
+</body>
+</html>

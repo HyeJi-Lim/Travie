@@ -1,0 +1,1073 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main</title>
+
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;700;900&family=Roboto:wght@300;400;500;700;900&display=swap');
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        body{
+            background-color: #F6F6F6;
+        }
+
+        /* 헤더 */
+        .logo{
+            margin-right: 48px;
+        }
+
+        header{
+            position: absolute;
+            top:0;
+            left:0;
+            z-index: 100;
+
+            width: 100%;
+            height: 60px;
+            background-color: rgb(0,0,0,0.1);
+            backdrop-filter: blur(5px);
+
+            font-family: 'Roboto', sans-serif;
+            font-size: 20px;
+            font-weight: 500;
+            color: #fff;
+            box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.1);
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .site-header{
+            width: 1200px;
+            height: 24px;
+            margin-left: auto;
+            margin-right: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .site-nav ul{
+            list-style: none;
+            display: flex;
+        }
+
+        .site-nav a{
+            text-decoration: none;
+            color: #fff;
+            padding-right: 24px;
+        }
+
+        .site-nav a:hover{
+            color:#93D1E6;
+        }
+
+        /* 헤더이미지 */
+        .container{
+            width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .conA{
+            display: flex;
+            align-items: center;
+            justify-content: left;
+            height: 100vh;
+            min-height: 450px;
+            background-image: url(https://i.postimg.cc/0QqT9KCD/image.png);
+            background-position: center;
+            background-size: cover;
+            text-align: left;
+            color: #fff;
+
+            animation: img-change 8s linear infinite;
+            animation-direction: alternate;
+            animation-fill-mode: both;
+            animation-timing-function:ease-in-out;
+        }
+
+        @keyframes img-change {
+        0% {
+            background-image: url('https://i.postimg.cc/0QqT9KCD/image.png');
+        }
+        50% {
+            background-image: url('https://i.postimg.cc/d1Ym4ZQN/2.jpg');
+        }
+        100% {
+            background-image: url('https://i.postimg.cc/SRZ6SZ6H/3.jpg');
+        }
+        }
+
+        .conA .sub{
+            font-size: 16px;
+            color: #DADADA;
+            margin-bottom: 16px;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 500;
+        }
+
+        .conA h1{
+            font-size: 56px;
+            color: #fff;
+            margin-bottom: 8px;
+            font-family: 'Noto Sans KR', sans-serif;
+            font-weight: 700;
+        }
+
+        .conA .explain{
+            font-size: 16px;
+            color: #F9F9F9;
+            margin-bottom: 85px;
+            font-family: 'Noto Sans KR', sans-serif;
+            font-weight: 300;
+            line-height: 160%;
+        }
+
+        .conA a{
+            text-decoration: none;
+            color:#DADADA;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+            border-bottom: solid 1px #DADADA;
+        }
+
+        /* 콘텐츠1 */
+
+        h2{
+            font-size: 36px;
+            font-family: 'Noto Sans KR', sans-serif;
+            font-weight: 700;
+            color: #232323;
+            margin-top: 100px;
+            margin-bottom: 8px;
+        }
+
+        .magazine-img{
+            width: 1200px;
+            height: 450px;
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-between;
+        }
+
+        .img1{
+            background-image: url(https://i.postimg.cc/HxP6mzpj/8.jpg);
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+
+            width: 345px;
+            height: 450px;
+            margin-right: 20px;
+
+            text-decoration: none;
+            color:#F6F6F6;
+            text-align: center;
+        }
+
+        .img2{
+            background-image: url(https://i.postimg.cc/TwnzYB4h/9.jpg);
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+
+            width: 345px;
+            height: 450px;
+            margin-right: 20px;
+
+            text-decoration: none;
+            color:#F6F6F6;
+            text-align: center;
+        }
+
+        .img3{
+            background-image: url(https://i.postimg.cc/1RJFYXv7/10.jpg);
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+
+            width: 345px;
+            height: 450px;
+            margin-right: 20px;
+
+            text-decoration: none;
+            color:#F6F6F6;
+            text-align: center;
+        }
+
+        .img4{
+            background-image: url(https://i.postimg.cc/xT6WCvtG/17908330.jpg);
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+
+            width: 345px;
+            height: 450px;
+            margin-right: 20px;
+
+            text-decoration: none;
+            color:#F6F6F6;
+            text-align: center;
+        }
+
+        .title{
+            font-size: 20px;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 500;
+
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .title .main-t{
+            font-size: 28px;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 700;
+
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .sub2{
+            font-size: 16px;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 300;
+            line-height: 160%;
+            margin-top: 8px;
+
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .overlay{
+            width: 100%;
+            height: 100%;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            transition: all 0.5s ease;
+        }
+
+        .magazine-img a:hover .overlay{
+            background-color: rgba(0,0,0,0.5);
+        }
+
+        .magazine-img :hover .title{
+            opacity: 1;
+        }
+
+        .magazine-img :hover .main-t{
+            opacity: 1;
+        }
+
+        .magazine-img :hover .sub2{
+            opacity: 1;
+        }
+
+        .more{
+            width: 120px;
+            height: 40px;
+            background-color: #FFFFFF;
+            border-radius: 50px;
+            border: solid 0.5px #BEBEBE ;
+
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 44px;
+            margin-bottom: 100px;
+        }
+
+        .more a{
+            text-decoration: none;
+            color:#56A3C0;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 500;
+            font-size: 16px;
+
+            line-height: 40px;
+        }
+
+        .more:hover{
+            background-color:#56A3C0 ;
+            box-shadow: 0 2px 10px 0px rgb(0,0,0,0.3);
+        }
+
+        .more:hover a{
+            color:#FFFFFF;
+        }
+
+        /* 콘텐츠2 */
+
+        .background{
+            background-color: #338fad;
+            width: 100%;
+            height: 224px;
+        }
+
+        h3{
+            font-size: 32px;
+            font-family: 'Noto Sans KR', sans-serif;
+            font-weight: 700;
+            color:#fff;
+            line-height: 90%;
+            padding-top: 30px;
+            margin-bottom:16px;
+
+            text-align: center;
+        }
+
+        h3 .sub3{
+            font-size: 12px;
+            font-family: 'Noto Sans KR', sans-serif;
+            font-weight: 500;
+            color:#ececec;
+
+            text-align: center;
+        }
+
+        .swiper {
+            width: 1200px;
+            height: 65px;
+        }
+
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+            border-radius: 10px;
+
+            /* Center slide text vertically */
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+        }
+
+        .swiper-slide img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .category1{
+            background-image: url(https://i.postimg.cc/GpM1gz39/image.jpg);
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            filter:brightness(90%);
+
+            text-decoration: none;
+        }
+
+        .category2{
+            background-image: url(https://i.postimg.cc/LsvfNxCJ/image.jpg);
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            filter:brightness(90%);
+
+            text-decoration: none;
+        }
+
+        .category3{
+            background-image: url(https://i.postimg.cc/dVPDRxCj/image.jpg);
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            filter:brightness(90%);
+
+            text-decoration: none;
+        }
+
+        .category4{
+            background-image: url(https://i.postimg.cc/SQgvzBwH/image.jpg);
+            background-position: center 80%;
+            background-repeat: no-repeat;
+            background-size: cover;
+            filter:brightness(90%);
+
+            text-decoration: none;
+        }
+
+        .category5{
+            background-image: url(https://i.postimg.cc/hPPh2dZf/2.jpg);
+            background-position: center 80%;
+            background-repeat: no-repeat;
+            background-size: cover;
+            filter:brightness(90%);
+
+            text-decoration: none;
+        }
+
+        .category6{
+            background-image: url(https://i.postimg.cc/6qQwfd6K/image.jpg);
+            background-position: center 70%;
+            background-repeat: no-repeat;
+            background-size: cover;
+            filter:brightness(90%);
+
+            text-decoration: none;
+        }
+
+        .category7{
+            background-image: url(https://i.postimg.cc/qR1Hqzs5/image.jpg);
+            background-position: center 70%;
+            background-repeat: no-repeat;
+            background-size: cover;
+            filter:brightness(90%);
+
+            text-decoration: none;
+        }
+
+        .category8{
+            background-image: url(https://i.postimg.cc/Pq3krCzF/image.jpg);
+            background-position: center 70%;
+            background-repeat: no-repeat;
+            background-size: cover;
+            filter:brightness(90%);
+
+            text-decoration: none;
+        }
+
+        .category9{
+            background-image: url(https://i.postimg.cc/cHRMBn9F/image.jpg);
+            background-position: center 70%;
+            background-repeat: no-repeat;
+            background-size: cover;
+            filter:brightness(90%);
+
+            text-decoration: none;
+        }
+
+        .category1::before, .category2::before, .category3::before, .category4::before, .category5::before, .category6::before, .category7::before, .category8::before, .category9::before{
+            content: "";
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            position: absolute;
+            top:0;
+            left:0;
+            background: rgba(0,0,0,0.5);
+            z-index: -1;
+        }
+
+        .category1 p, .category2 p, .category3 p, .category4 p, .category5 p, .category6 p, .category7 p, .category8 p, .category9 p{
+            font-size: 12px;
+            color:#fff;
+            font-family: 'Noto Sans KR', sans-serif;
+            font-weight: 500;
+        }
+
+        .swiper-button-next{
+            color:#d9d9d9;
+        }
+
+        /* 콘텐츠3 */
+
+        .card{
+            width: 385px;
+            height: 600px;
+            background-color: #fff;
+            border:solid 0.5px rgba(190,190,190,0.5);
+            margin-right: 8px;
+
+            border-radius: 10px;
+            overflow: hidden;
+
+            display: inline-block;
+            flex: 1 0 385px;
+        }
+
+        .card:hover{
+            box-shadow: 0 4px 10px 2px rgba(0, 0, 0, 0.1);
+            transform: translateY(-2px)
+        }
+
+        .card .description{
+            text-align: left;
+            padding-top: 20px;
+            padding-left: 36px;
+            background-color: #fff;
+        }
+
+        .card .description .tag{
+            font-size: 12px;
+            font-family: 'Noto Sans KR', sans-serif;
+            font-weight: 400;
+            color: #56A3C0;
+
+            padding-bottom: 60px;
+        }
+
+        .card a{
+            text-decoration: none;
+        }
+
+        h4{
+            font-size: 24px;
+            color:#232323;
+            font-family: 'Noto Sans KR', sans-serif;
+            font-weight: 700;
+
+            margin-bottom: 16px;
+        }
+
+        .card .description a{
+            font-size: 12px;
+            font-family: 'Noto Sans KR', sans-serif;
+            font-weight: 700;
+            color:#777;
+        }
+
+        /* 콘텐츠4 */
+
+        .background2{
+            background-color: #232323;
+            width: 100%;
+            height: 600px;
+        }
+
+        h5{
+            font-size: 36px;
+            font-family: 'Noto Sans KR', sans-serif;
+            font-weight: 700;
+            color:#fff;
+            text-align: center;
+            padding-top: 40px;
+        }
+
+        .contents{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .cont{
+            width: 263px;
+            height: 363px;
+
+            margin-top: 40px;
+        }
+
+        .circle1, .circle2, .circle3, .circle4, .circle5{
+            width: 200px;
+            height: 200px;
+            border-radius: 100%;
+
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .circle1{
+            background-image: url(https://i.postimg.cc/DyBvzQ3n/image.jpg);
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: 150%;
+
+            transition: background-size 0.3s ease;
+        }
+
+        .circle1:hover{
+            background-size:170%;
+        }
+
+        .circle2{
+            background-image: url(https://i.postimg.cc/gjgCGDX7/image.jpg);
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: 150%;
+
+            transition: background-size 0.3s ease;
+        }
+
+        .circle2:hover{
+            background-size:170%;
+        }
+
+        .circle3{
+            background-image: url(https://i.postimg.cc/JnmvJgjg/image.jpg);
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: 150%;
+
+            transition: background-size 0.3s ease;
+
+            position: relative;
+            z-index: 0;
+        }
+
+        .circle3:hover{
+            background-size:170%;
+        }
+
+
+        .circle3::before{
+            content: "추천";
+            width: 50px;
+            height: 50px;
+            border-radius: 100%;
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: #338fad;
+            z-index: 100;
+            text-align: center;
+            line-height: 50px;
+            color:#fff;
+            font-family: 'Noto Sans KR', sans-serif;
+            font-weight: 700;
+        }
+
+        .circle4{
+            background-image: url(https://i.postimg.cc/mgCmwjZG/image.jpg);
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: 150%;
+
+            transition: background-size 0.3s ease;
+        }
+
+        .circle4:hover{
+            background-size:170%;
+        }
+
+
+        .circle5{
+            background-image: url(https://i.postimg.cc/L5GVkYrX/image.jpg);
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: 150%;
+
+            transition: background-size 0.3s ease;
+        }
+
+        .circle5:hover{
+            background-size:170%;
+        }
+
+
+        .name{
+            font-size: 16px;
+            color:#fff;
+            font-family: 'Noto Sans KR', sans-serif;
+            font-weight: 500;
+            text-align: center;
+            margin-top: 8px;
+            margin-bottom: 8px;
+        }
+
+        .ex{
+            font-size: 12px;
+            color: #fcfcfc;
+            font-family: 'Noto Sans KR', sans-serif;
+            font-weight: 100;
+            text-align: center;
+            line-height: 160%;
+        }
+
+        .cont a{
+            text-decoration: none;
+        }
+
+        .more2{
+            width: 120px;
+            height: 40px;
+            background-color: #232323;
+            border-radius: 50px;
+            border: solid 0.5px #338fad ;
+
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 10px;
+            margin-bottom: 0;
+        }
+
+        .more2 a{
+            text-decoration: none;
+            color:#56A3C0;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 500;
+            font-size: 16px;
+
+            line-height: 40px;
+        }
+
+        .more2:hover{
+            background-color:#56A3C0 ;
+            border: solid 0.5px #fff;
+            box-shadow: 0 2px 10px 0px rgb(0,0,0,0.3);
+        }
+
+        .more2:hover a{
+            color:#FFFFFF;
+        }
+
+        /* 푸터 */
+        footer{
+            color: #E2E2E2;
+            background-color: #444444;
+            width: 100%;
+            height: 300px;
+            margin-top: 0;
+            padding-top: 25px;
+            padding-bottom: 25px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap:wrap;
+        }
+
+        .footA{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-bottom: 16px;
+
+            border-bottom: solid 1px #F0F0F0;
+        }
+
+        .footer-nav ul{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .footer-nav li{
+            list-style: none;
+        }
+
+        .footer-nav a{
+            text-decoration: none;
+            color: #E2E2E2;
+            font-size: 16px;
+            font-family: 'Noto Sans KR', sans-serif;
+            font-weight: 400;
+
+            margin-right: 24px;
+        }
+
+        .icons ul{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .icons li{
+            list-style: none;
+        }
+
+        .icons a{
+            margin-right: 4px;
+        }
+
+        .footB{
+            width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .footB p{
+            font-size: 12px;
+            font-family: 'Noto Sans KR', sans-serif;
+            font-weight: 400;
+
+            line-height: 24px;
+        }
+
+        .footC{
+            width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .site{
+            width: 200px;
+        }
+
+        .site ul{
+            list-style: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+<body>
+
+<!-- 헤더 -->
+    <header>
+        <div class="site-header">
+        <a href="index.html" class="logo"><img src="https://i.postimg.cc/65GsQsWK/image.png" alt="travie logo"></a>
+
+        <nav class="site-nav">
+            <ul>
+                <li><a href="Trip.html">Trip</a></li>
+                <li><a href="Magazine.html">Magazine</a></li>
+                <li><a href="Newsletter.html">Newsletter</a></li>
+                <li><a href="About.html">About</a></li>
+            </ul>
+        </nav>
+      </div>
+    </header>
+
+<!-- 헤더이미지 -->
+    <section class="conA">
+        <div class="container">
+            <p class="sub">&nbsp;MAGAZINE Travie&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;STAY</p>
+            <h1>단 한번의 몰디브</h1>
+            <p class="explain">휴양지의 대표 몰디브, 그곳을 여행한 이야기<Br>
+                우리는 몰디브의 바다를 ‘잘’ 이용한, 이왕이면 다양한 선택지를 제시해 주는 곳으로 가야 한다.<br>
+                휴양의 가치를 알고 있는 곳. 그곳이 내겐 ‘아난타라 디구 몰디브 리조트’였다.</p>
+            <a href="Trip.html">MORE</a>
+        </div>
+    </section>
+
+    <!-- 콘텐츠1 -->
+    <section class="conB">
+        <div class="container">
+            <h2>매달, 트래비의 잡지</h2>
+            <div class="magazine-img">
+                <a class="img1" href="Magazine.html">
+                    <div class="overlay">
+                        <p class="title"><span class="main-t">Travie</span><br>
+                            August 2022</p>
+                        <p class="sub2">TURKIYE<BR>
+                            ORLANDO<BR>
+                            LA to NY<BR>
+                            THAILAND</p>
+                    </div>
+                </a>
+                <a class="img2" href="Magazine.html">
+                    <div class="overlay">
+                        <p class="title"><span class="main-t">Travie</span><br>
+                            September 2022</p>
+                        <p class="sub2">BANGKOK<BR>
+                            HOKKAIDO<BR>
+                            SAN FRANCISCO<BR>
+                            UKRAINE</p>
+                    </div>
+                </a>
+                <a class="img3" href="Magazine.html">
+                    <div class="overlay">
+                        <p class="title"><span class="main-t">Travie</span><br>
+                            October 2022</p>
+                        <p class="sub2">가을여행<BR>
+                            KOH SAMUI<BR>
+                            CRUISE<BR>
+                            CEBU</p>
+                    </div>
+                </a>
+                <a class="img4" href="Magazine.html">
+                    <div class="overlay">
+                        <p class="title"><span class="main-t">Travie</span><br>
+                            November 2022</p>
+                        <p class="sub2">AUSTRIA<br>
+                            MALDIVES<br>
+                            BANGKOK<br>
+                            SURINAME</p>
+                    </div>
+                </a>
+            </div>
+            <div class="more"><a href="Magazine.html">MORE</a></div>
+        </div>
+    </section>
+
+    <!-- 콘텐츠2 -->
+    <section class="conB">
+        <div class="background">
+        <div class="container">
+            <h3><span class="sub3">테마별 여행지 모아보기</span><br>테마별로 여행지를 미리 만나보세요.</h3>
+
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide"><a class="category1 swiper-slide" href="#"><p>전체보기</p></a></div>
+                  <div class="swiper-slide"><a class="category2 swiper-slide" href="#"><p>가족과 함께</p></a></div>
+                  <div class="swiper-slide"><a class="category3 swiper-slide" href="#"><p>연인과 함께</p></a></div>
+                  <div class="swiper-slide"><a class="category4 swiper-slide" href="#"><p>친구와 함께</p></a></div>
+                  <div class="swiper-slide"><a class="category5 swiper-slide" href="#"><p>혼자</p></a></div>
+                  <div class="swiper-slide"><a class="category6 swiper-slide" href="#"><p>겨울 여행</p></a></div>
+                  <div class="swiper-slide"><a class="category7 swiper-slide" href="#"><p>력셔리</p></a></div>
+                  <div class="swiper-slide"><a class="category8 swiper-slide" href="#"><p>가성비</p></a></div>
+                  <div class="swiper-slide"><a class="category9 swiper-slide" href="#"><p>바다</p></a></div>
+                </div>
+                <div class="swiper-button-next"></div>
+              </div>
+          
+              <!-- Swiper JS -->
+              <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+          
+              <!-- Initialize Swiper -->
+              <script>
+                var swiper = new Swiper(".mySwiper", {
+                  slidesPerView: 6,
+                  spaceBetween: 30,
+                  slidesPerGroup: 3,
+                  loop: true,
+                  loopFillGroupWithBlank: true,
+                  pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                  },
+                  navigation: {
+                    nextEl: ".swiper-button-next"
+                  },
+                });
+              </script>
+
+        </div>
+    </div>
+    </section>
+
+    <!-- 콘텐츠3 -->
+
+    <section class="conC">
+        <div class="container">
+            <h2>국내여행 살펴보기</h2>
+            <a class="trip-card" href="Trip.html">
+                <div class="card">
+                    <img src="https://i.postimg.cc/q7C901qg/image.jpg" alt="청주" height="350px">
+                    <div class="description">
+                        <h4>청주 옛 도심으로 떠나는<br>'청주읍성 역사여행'</h4>
+                        <p class="tag">#청주 #역사 #도심</p>
+                        <a href="#">자세히 보기</a>
+                    </div>
+                </div>
+            </a>
+            <a class="trip-card" href="Trip.html">
+                <div class="card">
+                    <img src="https://i.postimg.cc/QCk9FLNt/image.jpg" alt="완주" height="350px">
+                    <div class="description">
+                        <h4>싱그럽게 여행을 <br>'완주'하는 법</h4>
+                        <p class="tag">#여행 #완주 #싱그러움</p>
+                        <a href="#">자세히 보기</a>
+                    </div>
+                </div>
+            </a>
+            <a class="trip-card" href="Trip.html">
+                <div class="card">
+                    <img src="https://i.postimg.cc/vZSzYnSK/2.jpg" alt="병풍도" height="350px">
+                    <div class="description">
+                        <h4>알록달록<br>병풍도의 가을꽃 축제</h4>
+                        <p class="tag">#가을 #병풍도 #축제</p>
+                        <a href="#">자세히 보기</a>
+                    </div>
+                </div>
+            </a>
+            <div class="more"><a href="Trip.html">MORE</a></div>
+        </div>
+    </section>
+
+    <!-- 콘텐츠4 -->
+
+    <section class="conD">
+        <div class="background2">
+            <div class="container">
+                <h5>해외여행 살펴보기</h5>
+                <div class="contents">
+                    <div class="cont">
+                        <a href="Trip.html"><div class="circle1"></div></a>
+                        <p class="name">말레시아</p>
+                        <p class="ex">여행의 모든 것은 애틋하고 소중하지만<br>약간의 흥을 더한다면?<br>말레시아 여행을 더욱 특별하고<br>풍요롭게 만드는 축제를 모았다.</p>
+                    </div>
+                    <div class="cont">
+                        <a href="Trip.html"><div class="circle2"></div></a>
+                        <p class="name">홍콩</p>
+                        <p class="ex">도시의 생명력은 문화와 예술에서 비롯된다.<br>그리고 문화와 예술을 잉태하는 건,<br>수많은 갤러리와 박문관들이다.</p>
+                    </div>
+                    <div class="cont">
+                        <a href="Trip.html"><div class="circle3"></div></a>
+                        <p class="name">싱가포르에서 세계여행</p>
+                        <p class="ex">다양한 언어를 사용하고,<br>다양한 종교를 믿고, 다양한 문화를<br>존중하며 묘한 경계를 넘나든다. 도무지 하나로<br>정의할 수 없는 것이 매력일지도 모른다.</p>
+                    </div>
+                    <div class="cont">
+                        <a href="Trip.html"><div class="circle4"></div></a>
+                        <p class="name">캐나다</p>
+                        <p class="ex">썰매에 오른 아이의 웃음,<br>손잡고 마주 보는 연인의 간지로운<br>사랑, 엉덩방아 소리, 스케이트를 타고...</p>
+                    </div>
+                    <div class="cont">
+                        <a href="Trip.html"><div class="circle5"></div></a>
+                        <p class="name">프랑스</p>
+                        <p class="ex">어떤 기억은 굳이 애쓰지<br>않아도 자연히 과거의 시간 속에서<br>방부처리가 된다. 어제의 프랑스가 그렇다.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="more2"><a href="Trip.html">MORE</a></div>
+        </div>
+    </section>
+
+<!-- 푸터 -->
+    <footer>
+        <div class="footA">
+
+            <nav class="footer-nav">
+                <ul>
+                    <li><a href="#">회사소개</a></li>
+                    <li><a href="#">기사제보</a></li>
+                    <li><a href="#">광고문의</a></li>
+                    <li><a href="#">개인정보처리방침</a></li>
+                    <li><a href="#">이용약관</a></li>
+                    <li><a href="#">청소년보호정책</a></li>
+                    <li><a href="#">저작권보호정책</a></li>
+                    <li><a href="#">RSS</a></li>
+                </ul>
+            </nav>
+
+            <nav class="icons">
+                <ul>
+                    <li><a href="#"><img src="https://i.postimg.cc/c1BsjWkr/Frame-18.png" alt="Facebook" width="30px" height="30px"></a></li>
+                    <li><a href="#"><img src="https://i.postimg.cc/MKXpj4tH/Frame-19.png" alt="brunch" width="30px" height="30px"></a></li>
+                    <li><a href="#"><img src="https://i.postimg.cc/jq3sKcKb/Frame-20.png" alt="naver" width="30px" height="30px"></a></li>
+                    <li><a href="#"><img src="https://i.postimg.cc/gJkWbXTj/Frame-21.png" alt="youtube" width="30px" height="30px"></a></li>
+                    <li><a href="#"><img src="https://i.postimg.cc/43w3cgCK/Frame-22.png" alt="insta" width="30px" height="30px"></a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="footB">
+            <p>서울특별시 중구 무교로 16 (주)여행신문<br>
+                대표전화: 02-757-8980 I 팩스: 02-757-8983<br>
+                법인명: (주)여행신문 I 등록번호: 서울 라 00311 (2009-10-13)<br>
+                발행·편집인: 한정훈 I 대표자명: 김기남 I 청소년보호책임자:  전홍렬</p>
+        </div>
+        <div class="footC">
+            <nav class="site">
+                <ul>
+                    <li><a href="#"><img src="https://i.postimg.cc/j5bHh1X0/image.png" alt="site1"></a></li>
+                    <li><a href="#"><img src="https://i.postimg.cc/VNmfzBsB/image.png" alt="site1"></a></li>
+                </ul>
+            </nav>
+        </div>
+</footer>
+    
+</body>
+</html>

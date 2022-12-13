@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newsletter</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;700;900&family=Roboto:wght@300;400;500;700;900&display=swap');
+
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        .container{
+            width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* 헤더 */
+        .logo{
+            margin-right: 48px;
+        }
+
+        header{
+            width: 100%;
+            height: 60px;
+            background-color: rgb(255,255,255,0.2);
+            backdrop-filter: blur(5px);
+
+            font-family: 'Roboto', sans-serif;
+            font-size: 20px;
+            font-weight: 500;
+            color: #D0D0D0;
+            box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.1);
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .site-header{
+            width: 1200px;
+            height: 24px;
+            margin-left: auto;
+            margin-right: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .site-nav ul{
+            list-style: none;
+            display: flex;
+        }
+
+        .site-nav a{
+            text-decoration: none;
+            color: #D0D0D0;
+            padding-right: 24px;
+        }
+
+        .site-nav .click{
+        font-family: 'Roboto', sans-serif;
+        font-size: 20px;
+        font-weight: 700;
+        color:#777777;
+        }
+
+        .site-nav a:hover{
+            color:#777777;
+            font-weight: 700;
+        }
+
+        /* 헤더이미지 */
+        .conA{
+            width: 100%;
+            height: 340px;
+            background: linear-gradient(#e0c3fc,#8ec5fc);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .sub{
+            font-size: 24px;
+            color:#444;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        h1{
+            font-size: 36px;
+            color: #232323;
+            font-family: 'Noto Sans KR', sans-serif;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        /* 콘텐츠1 */
+        .contents{
+            display: grid;
+            grid-template-columns: 290px 290px 290px 290px;
+            grid-template-rows: 290px 290px;
+            gap:20px;
+        }
+
+        .item1{
+            grid-row-start:1;
+            grid-row-end:3;
+            grid-column-start: 1;
+            grid-column-end: 3;
+            border-radius: 30px;
+            background-image: url(https://i.postimg.cc/FHz395HZ/beach-geb473aa2f-1920.jpg);
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+
+            display: flex;
+        }
+
+        .item2{
+            grid-row-start:1;
+            grid-row-end:2;
+            grid-column-start: 3;
+            grid-column-end: 4;
+            border-radius: 20px;
+            background-image: url(https://i.postimg.cc/mD9pr18T/1.jpg);
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+
+            display: flex;
+        }
+
+        .item3{
+            grid-row-start:1;
+            grid-row-end:2;
+            grid-column-start: 4;
+            grid-column-end: 5;
+            border-radius: 20px;
+            background-image: url(https://i.postimg.cc/Xvfy7VdT/2.jpg);
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+
+            display: flex;
+        }
+
+        .item4{
+            grid-row-start:2;
+            grid-row-end:3;
+            grid-column-start: 3;
+            grid-column-end: 4;
+            border-radius: 20px;
+            background-image: url(https://i.postimg.cc/5NWyjcNJ/3.jpg);
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+
+            display: flex;
+        }
+
+        .item5{
+            grid-row-start:2;
+            grid-row-end:3;
+            grid-column-start: 4;
+            grid-column-end: 5;
+            border-radius: 20px;
+            background-image: url(https://i.postimg.cc/7LRYkdQp/4.jpg);
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+
+            display: flex;
+        }
+
+        h2{
+            font-size: 36px;
+            font-family: 'Noto Sans KR', sans-serif;
+            font-weight: 700;
+            color:#232323;
+            margin-top: 100px;
+            margin-bottom: 8px;
+        }
+
+        .contents a{
+            text-decoration: none;
+        }
+
+        .overlay{
+            width: 100%;
+            height: 40%;
+            text-align: center;
+
+            border-radius: 0 0 30px 30px;
+
+            margin-top: auto;
+            transition: all 0.8s ease;
+        }
+
+        .overlay2{
+            width: 100%;
+            height: 40%;
+            text-align: center;
+
+            border-radius: 0 0 20px 20px;
+
+            margin-top: auto;
+            transition: all 0.8s ease;
+        }
+
+        .contents a:hover .overlay2{
+            background: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,1));
+        }
+
+        .contents a:hover .overlay{
+            background: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,1));
+        }
+
+        .ex{
+            font-size: 24px;
+            font-family: 'Noto Sans KR', sans-serif;
+            font-weight: 500;
+            color:#fff;
+            text-align: center;
+            margin-top: 190px;
+
+            opacity: 0;
+            transition: all 0.8s ease;
+        }
+
+        .ex2{
+            font-size: 16px;
+            font-family: 'Noto Sans KR', sans-serif;
+            font-weight: 500;
+            color:#fff;
+            text-align: center;
+            margin-top: 80px;
+
+            opacity: 0;
+            transition: all 0.8s ease;
+        }
+        
+        .contents :hover .ex2{
+            opacity: 1;
+        }
+
+        .contents :hover .ex{
+            opacity: 1;
+        }
+
+        /* 콘텐츠2 */
+        .tabmenu {
+            font-size: 0;
+            text-align: left;
+        }
+
+        .tabmenu input[type="radio"] {
+            display: none;
+        }
+
+        .tabmenu label {
+            display: inline-block;
+            width: 97px;
+            height: 40px;
+            line-height: 40px;
+            margin-right: 12px;
+            margin-bottom: 66px;
+            background: #D9D9D9;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 20px;
+            font-family: 'Noto Sans KR', sans-serif;
+            font-weight: 400;
+            cursor: pointer;
+            color:#fff;
+        }
+
+        .tabmenu > div {
+            display: none;
+            min-height: 300px;
+            font-size: 60px;
+            color: #fff;
+        }
+
+        .tabmenu input[type="radio"]:checked + label {
+            background: #338FAD;
+            font-weight: 700;
+        }
+
+        .tabmenu #tab1:checked ~ #cont1,
+        .tabmenu #tab2:checked ~ #cont2,
+        .tabmenu #tab3:checked ~ #cont3,
+        .tabmenu #tab4:checked ~ #cont4 {
+            display: block;
+        }
+
+        .news{
+            width: 1200px;
+            height: 242px;
+            margin-bottom: 20px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            text-decoration: none;
+        }
+
+        .new-img{
+            width: 467px;
+            height: 242px;
+            border-radius: 10px;
+            background-image: url(https://i.postimg.cc/3xckZtHJ/1.jpg);
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: 100%;
+
+            transition: background-size 0.3s ease-in-out;
+        }
+
+        .new-img:hover{
+            background-size:110%;
+        }
+
+        .new-img2:hover{
+            background-size:110%;
+        }
+
+        .new-img3:hover{
+            background-size:110%;
+        }
+
+        .new-img4:hover{
+            background-size:110%;
+        }
+
+        .new-img5:hover{
+            background-size:110%;
+        }
+
+        .new-img6:hover{
+            background-size:110%;
+        }
+
+        .new-img7:hover{
+            background-size:110%;
+        }
+
+        .new-img8:hover{
+            background-size:110%;
+        }
+
+        .new-img9:hover{
+            background-size:110%;
+        }
+
+        .new-img10:hover{
+            background-size:110%;
+        }
+
+        .new-img11:hover{
+            background-size:110%;
+        }
+
+        .new-img12:hover{
+            background-size:110%;
+        }
+
+        .new-img2{
+            width: 467px;
+            height: 242px;
+            border-radius: 10px;
+            background-image: url(https://i.postimg.cc/6qb81cG0/matteo-raw-Gt-Eobzv-RBXU-unsplash.jpg);
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: 100%;
+
+            transition: background-size 0.3s ease-in-out;
+        }
+
+        .new-img3{
+            width: 467px;
+            height: 242px;
+            border-radius: 10px;
+            background-image: url(https://i.postimg.cc/wB57dgm3/steffen-b-q-DZ-Xd8d-X6w-unsplash.jpg);
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: 100%;
+
+            transition: background-size 0.3s ease-in-out;
+        }
+
+        .new-img4{
+            width: 467px;
+            height: 242px;
+            border-radius: 10px;
+            background-image: url(https://i.postimg.cc/fbtbHppK/image.jpg);
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: 100%;
+
+            transition: background-size 0.3s ease-in-out;
+        }
+
+        .new-img5{
+            width: 467px;
+            height: 242px;
+            border-radius: 10px;
+            background-image: url(https://i.postimg.cc/zDbG8sfY/image.jpg);
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: 100%;
+
+            transition: background-size 0.3s ease-in-out;
+        }
+
+        .new-img6{
+            width: 467px;
+            height: 242px;
+            border-radius: 10px;
+            background-image: url(https://i.postimg.cc/7hh984z5/image.jpg);
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: 100%;
+
+            transition: background-size 0.3s ease-in-out;
+        }
+
+        .new-img7{
+            width: 467px;
+            height: 242px;
+            border-radius: 10px;
+            background-image: url(https://i.postimg.cc/g0PqN8kt/image.jpg);
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: 100%;
+
+            transition: background-size 0.3s ease-in-out;
+        }
+
+        .new-img8{
+            width: 467px;
+            height: 242px;
+            border-radius: 10px;
+            background-image: url(https://i.postimg.cc/vmNnCnQd/2.jpg);
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: 100%;
+
+            transition: background-size 0.3s ease-in-out;
+        }
+
+        .new-img9{
+            width: 467px;
+            height: 242px;
+            border-radius: 10px;
+            background-image: url(https://i.postimg.cc/wMTdJ1m7/image.jpg);
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: 100%;
+
+            transition: background-size 0.3s ease-in-out;
+        }
+
+        .new-img10{
+            width: 467px;
+            height: 242px;
+            border-radius: 10px;
+            background-image: url(https://i.postimg.cc/dQ8BZWsk/image.jpg);
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: 100%;
+
+            transition: background-size 0.3s ease-in-out;
+        }
+
+        .new-img11{
+            width: 467px;
+            height: 242px;
+            border-radius: 10px;
+            background-image: url(https://images.unsplash.com/photo-1501785888041-af3ef285b470?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80);
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: 100%;
+
+            transition: background-size 0.3s ease-in-out;
+        }
+
+        .new-img12{
+            width: 467px;
+            height: 242px;
+            border-radius: 10px;
+            background-image: url(https://i.postimg.cc/jjDVsVrJ/image.jpg);
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: 100%;
+
+            transition: background-size 0.3s ease-in-out;
+        }
+
+        .new-ex{
+            width: 720px;
+            height: 242px;
+            border-radius: 10px;
+            border: solid 0.5px #c9c9c9;
+        }
+
+        h3{
+            font-size: 24px;
+            font-family: 'Noto Sans KR', sans-serif;
+            font-weight: 700;
+            color: #232323;
+
+            margin-left: 32px;
+            margin-top: 40px;
+        }
+
+        h3:hover{
+            color:#338FAD;
+        }
+
+        .sub2{
+            font-size: 16px;
+            font-family: 'Noto Sans KR', sans-serif;
+            font-weight: 300;
+            color: #777777;
+            margin-left: 32px;
+            margin-top: 12px;
+            line-height: 160%;
+        }
+
+        .tag{
+            font-size: 12px;
+            font-family: 'Noto Sans KR', sans-serif;
+            font-weight: 400;
+            color: #56A3C0;
+            margin-left: 32px;
+            margin-top: 24px;
+        }
+
+        /* 푸터 */
+        footer{
+            color: #E2E2E2;
+            background-color: #444444;
+            width: 100%;
+            height: 300px;
+            margin-top: 110px;
+            padding-top: 25px;
+            padding-bottom: 25px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap:wrap;
+        }
+
+        .footA{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-bottom: 16px;
+
+            border-bottom: solid 1px #F0F0F0;
+        }
+
+        .footer-nav ul{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .footer-nav li{
+            list-style: none;
+        }
+
+        .footer-nav a{
+            text-decoration: none;
+            color: #E2E2E2;
+            font-size: 16px;
+            font-family: 'Noto Sans KR', sans-serif;
+            font-weight: 400;
+
+            margin-right: 24px;
+        }
+
+        .icons ul{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .icons li{
+            list-style: none;
+        }
+
+        .icons a{
+            margin-right: 4px;
+        }
+
+        .footB{
+            width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .footB p{
+            font-size: 12px;
+            font-family: 'Noto Sans KR', sans-serif;
+            font-weight: 400;
+
+            line-height: 24px;
+        }
+
+        .footC{
+            width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .site{
+            width: 200px;
+        }
+
+        .site ul{
+            list-style: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- 헤더 -->
+    <header>
+        <div class="site-header">
+        <a href="index.html" class="logo"><img src="https://i.postimg.cc/65GsQsWK/image.png" alt="travie logo"></a>
+
+        <nav class="site-nav">
+            <ul>
+                <li><a href="Trip.html">Trip</a></li>
+                <li><a href="Magazine.html">Magazine</a></li>
+                <li><a class="click" href="Newsletter.html">Newsletter</a></li>
+                <li><a href="About.html">About</a></li>
+            </ul>
+        </nav>
+      </div>
+    </header>
+    
+    <!-- 헤더이미지 -->
+    <section class="conA">
+        <div class="container">
+            <p class="sub">Travie Newsletter</p>
+            <h1>다양한 영역의 정보를 한 곳에서 모아보기</h1>
+        </div>
+    </section>
+
+    <!-- 콘텐츠1 -->
+    <section class="conB">
+        <div class="container">
+            <h2>많은 사람들이 찾아본 인기기사</h2>
+            <div class="contents">
+                <a class="item1" href="#">
+                    <div class="overlay">
+                        <p class="ex">언제든 떠날 수 있어, 몰디브</p>
+                    </div>
+                </a>
+                <a class="item2" href="#">
+                    <div class="overlay2">
+                        <p class="ex2">마음의 온도 높이는 방 꾸미기</p>
+                    </div>
+                </a>
+                <a class="item3" href="#">
+                    <div class="overlay2">
+                        <p class="ex2">휴양지 필수템</p>
+                    </div>
+                </a>
+                <a class="item4" href="#">
+                    <div class="overlay2">
+                        <p class="ex2">그때 그 서울이 그리울 때</p>
+                    </div>
+                </a>
+                <a class="item5" href="#">
+                    <div class="overlay2">
+                        <p class="ex2">강진의 맛, 백반</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 콘텐츠2 -->
+    <section class="conc">
+        <div class="container">
+            <h2>영역별 기사</h2>
+            <div class="tabmenu">
+                <input type="radio" name="tab" id="tab1" checked>
+                <label for="tab1">ALL</label>
+                <input type="radio" name="tab" id="tab2">
+                <label for="tab2">Stay</label>
+                <input type="radio" name="tab" id="tab3">
+                <label for="tab3">Rail</label>
+                <input type="radio" name="tab" id="tab4">
+                <label for="tab4">Feature</label>
+                <div id="cont1">
+                    <a class="news" href="#">
+                        <div class="new-img"></div>
+                        <div class="new-ex">
+                            <h3>홍콩에서 가장 완벽한 대안, 더 하리 홍콩</h3>
+                            <p class="sub2">홍콩은 호텔의 온도 차이가 굉장히 심한 여행지다. 좋으면 너무 비싸고 싸면 너무 나쁘다.<Br>
+                            중간이 없는 홍콩 호텔에 완벽한 대안을 제시한다. 20200년 12월 새롭게 오픈한 '더 하리 홍콩<br>(The Hari Hong Kong)'이 그 주인공이다.</p>
+                            <p class="tag">#홍콩 #호텔 #코즈웨이베이 #완벽 #더하리호텔</p>
+                        </div>
+                    </a>
+                    <a class="news" href="#">
+                        <div class="new-img2"></div>
+                        <div class="new-ex">
+                            <h3>인천까지 안 가도 돼요! 날개 펴는 지방공항들</h3>
+                            <p class="sub2">코로나19로 잠잠했던 지방 하늘길이 조금씩 깨어나고 있다.<br>
+                                연말이면 이른 새벽부터 인천공항으로 나서야 하는 여행객의 수고가 한결 덜해질 전망이다. </p>
+                            <p class="tag">#인천 #코로나 #공항 #여행 #비행기 #하늘</p>
+                        </div>
+                    </a>
+                    <a class="news" href="#">
+                        <div class="new-img3"></div>
+                        <div class="new-ex">
+                            <h3>3분기 한국인이 가장 많이 찾은 해외여행지는?</h3>
+                            <p class="sub2">올해 3분기 한국인이 가장 많이 찾은 해외여행 목적지는 어딜까.<br>
+                                바로 ‘베트남’이다. 한국인 출국자 6명 중 1명은 베트남으로 향한 것으로 나타났다.</p>
+                            <p class="tag">#한국인 #해외여행 #베트남 #2022</p>
+                        </div>
+                    </a>
+                </div>
+                <div id="cont2">
+                    <a class="news" href="#">
+                        <div class="new-img4"></div>
+                        <div class="new-ex">
+                            <h3>푸꾸옥에서 보낸 유유자적한 나날</h3>
+                            <p class="sub2">베트남의 숨은 낙원 푸꾸옥에서 진득한 여유를 찾았다. 산뜻한 해산물로 배를 채우고 해 질 녘에<br>맞춰 수영을 즐기고는 아늑한 침대에서 사부작거리다 파도 소리에 까무룩 잠드는 평화로운 날들. </p>
+                            <p class="tag">#베트남 #푸꾸옥 #낙원 #여유 #해변</p>
+                        </div>
+                    </a>
+                    <a class="news" href="#">
+                        <div class="new-img5"></div>
+                        <div class="new-ex">
+                            <h3>핫하거나 쿨하거나, 코사무이의 온도</h3>
+                            <p class="sub2">핫하거나 쿨하거나. 
+                                아바니 호텔 두 곳에서 만난 
+                                태국 코사무이의 낮과 밤.<br>
+                                엄밀히 말하자면 이곳의 이름은 ‘사무이’다. 태국어로 섬을 뜻하는 ‘코(Koh)’가 앞에 붙었으니<br>우리말로는 ‘사무이섬’이라 할 수 있다</p>
+                            <p class="tag">#코사무이 #태국 #휴양지 #호텔 #낮과밤</p>
+                        </div>
+                    </a>
+                    <a class="news" href="#">
+                        <div class="new-img6"></div>
+                        <div class="new-ex">
+                            <h3>차와 이야기의 집, 울산 다담한옥</h3>
+                            <p class="sub2">산새 소리에 아침을 열고 장작을 태우며 밤을 닫는다.
+                                한 잔의 차에 따뜻한 문장들이 오가는 곳,<br>
+                                다담한옥에서의 하루다.</p>
+                            <p class="tag">#울산 #다담한옥 #차 #자연 #산새</p>
+                        </div>
+                    </a>
+                </div>
+                <div id="cont3">
+                    <a class="news" href="#">
+                        <div class="new-img7"></div>
+                        <div class="new-ex">
+                            <h3>비아레일 타고 떠나는 캐나다 겨울 기차 여행</h3>
+                            <p class="sub2">세계에서 두 번째로 거대한 캐나다의 동과 서를 연결하는 비아레일(VIA Rail)은<br>
+                                총 1만2,500km의 거리를 19개의 노선으로 나누어 운행하고 있다.<br>
+                                역은 무려 450개로 캐나다 구석구석에 포진되어 있다.</p>
+                            <p class="tag">#캐나다 #겨울 #기차여행 #비아레일</p>
+                        </div>
+                    </a>
+                    <a class="news" href="#">
+                        <div class="new-img8"></div>
+                        <div class="new-ex">
+                            <h3>기차라는 여행의 마법</h3>
+                            <p class="sub2">기차를 타고 싶은 이유는 차고 넘친다. 유럽이라면 더욱 그렇다.<br>
+                                유럽의 기차역엔 지금도 꾹꾹 눌러 담은 키 만한 배낭을 멘 여행자가 많다.</p>
+                            <p class="tag">#기차 #여행 #마법 #유럽 #배낭</p>
+                        </div>
+                    </a>
+                    <a class="news" href="#">
+                        <div class="new-img9"></div>
+                        <div class="new-ex">
+                            <h3>하늘 위로 올라서는 법</h3>
+                            <p class="sub2">“등산화는 챙겨야 하지 않아? 겨울옷도 필요할 것 같은데?” 다테야마(立山)의 높이는<br> 3,000m가 넘는다.
+                                정상부까지 오를 거라는 이번 여행 계획을 이야기할 때마다 주변의 반응은<br>한결 같았다.</p>
+                            <p class="tag">#하늘 #등산화 #겨울옷 #다테야마 #산</p>
+                        </div>
+                    </a>
+                </div>
+                <div id="cont4">
+                    <a class="news" href="#">
+                        <div class="new-img10"></div>
+                        <div class="new-ex">
+                            <h3>경계선에서 만난 선물, 아름다운 섬 노을 11선</h3>
+                            <p class="sub2">섬은 자연의 모습이 비교적 잘 남아 있고 트레킹, 낚시, 캠핑 등 액티비티를 즐기기에도 좋은 환경을 가지고 있다.<br> 
+                                바다로 둘러싸여 있는 지형적 특징상 여행의 경계 또한 분명하다.</p>
+                            <p class="tag">#섬 #노을 #자연 #경계선 #선물</p>
+                        </div>
+                    </a>
+                    <a class="news" href="#">
+                        <div class="new-img11"></div>
+                        <div class="new-ex">
+                            <h3>안 쓰면 손해, 해외여행 신용카드 추천 6</h3>
+                            <p class="sub2">면세점 쇼핑을 벼르고 있는 신혼부부. 항공 마일리지에 목마른 프로 여행러.<br>  
+                                공항 라운지 러버들을 위하여. 주목, 해외여행 신용카드 육대장을 여기 모았다.</p>
+                            <p class="tag">#해외여행 #신용카드 #면세점 #쇼핑 #항공</p>
+                        </div>
+                    </a>
+                    <a class="news" href="#">
+                        <div class="new-img12"></div>
+                        <div class="new-ex">
+                            <h3> 캠핑 장비병이 도진다, 웨버 BBQ 클럽 강남</h3>
+                            <p class="sub2">‘○○은 장비빨.’ 지금까지 ○○에 사진, 골프, 낚시, 등산 따위가 고전적으로 들어갔다면, 요즘은 캠핑이 그 자릴 차지한다.<br> 
+                                사실 캠핑만큼 장비 욕심을 불러일으키는 아웃도어 취미도 또 없는데, 뭐든 일단 풀세트로 갖추고 봐야 한다는 타입이라면 총알 장전 제대로 해야겠다.</p>
+                            <p class="tag">#캠핑 #강남 #장비 #아웃도어 #취미</p>
+                        </div>
+                    </a>
+                </div>
+        </div>
+    </section>
+
+    <!-- 푸터 -->
+    <footer>
+        <div class="footA">
+
+            <nav class="footer-nav">
+                <ul>
+                    <li><a href="#">회사소개</a></li>
+                    <li><a href="#">기사제보</a></li>
+                    <li><a href="#">광고문의</a></li>
+                    <li><a href="#">개인정보처리방침</a></li>
+                    <li><a href="#">이용약관</a></li>
+                    <li><a href="#">청소년보호정책</a></li>
+                    <li><a href="#">저작권보호정책</a></li>
+                    <li><a href="#">RSS</a></li>
+                </ul>
+            </nav>
+
+            <nav class="icons">
+                <ul>
+                    <li><a href="#"><img src="https://i.postimg.cc/c1BsjWkr/Frame-18.png" alt="Facebook" width="30px" height="30px"></a></li>
+                    <li><a href="#"><img src="https://i.postimg.cc/MKXpj4tH/Frame-19.png" alt="brunch" width="30px" height="30px"></a></li>
+                    <li><a href="#"><img src="https://i.postimg.cc/jq3sKcKb/Frame-20.png" alt="naver" width="30px" height="30px"></a></li>
+                    <li><a href="#"><img src="https://i.postimg.cc/gJkWbXTj/Frame-21.png" alt="youtube" width="30px" height="30px"></a></li>
+                    <li><a href="#"><img src="https://i.postimg.cc/43w3cgCK/Frame-22.png" alt="insta" width="30px" height="30px"></a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="footB">
+            <p>서울특별시 중구 무교로 16 (주)여행신문<br>
+                대표전화: 02-757-8980 I 팩스: 02-757-8983<br>
+                법인명: (주)여행신문 I 등록번호: 서울 라 00311 (2009-10-13)<br>
+                발행·편집인: 한정훈 I 대표자명: 김기남 I 청소년보호책임자:  전홍렬</p>
+        </div>
+        <div class="footC">
+            <nav class="site">
+                <ul>
+                    <li><a href="#"><img src="https://i.postimg.cc/j5bHh1X0/image.png" alt="site1"></a></li>
+                    <li><a href="#"><img src="https://i.postimg.cc/VNmfzBsB/image.png" alt="site1"></a></li>
+                </ul>
+            </nav>
+        </div>
+</footer>
+    
+</body>
+</html>

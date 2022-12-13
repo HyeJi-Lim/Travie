@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magazine2</title>
+
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;700;900&family=Roboto:wght@300;400;500;700;900&display=swap');
+
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        body{
+            background-color: #F6F6F6;
+        }
+
+        .logo{
+            margin-right: 48px;
+        }
+
+        header{
+            width: 100%;
+            height: 60px;
+            background-color: rgb(255,255,255,0.2);
+            backdrop-filter: blur(5px);
+
+            font-family: 'Roboto', sans-serif;
+            font-size: 20px;
+            font-weight: 500;
+            color: #D0D0D0;
+            box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.1);
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            margin-bottom: 200px;
+        }
+
+        .site-header{
+            width: 1200px;
+            height: 24px;
+            margin-left: auto;
+            margin-right: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .site-nav ul{
+            list-style: none;
+            display: flex;
+        }
+
+        .site-nav a{
+            text-decoration: none;
+            color: #D0D0D0;
+            padding-right: 24px;
+        }
+
+        .site-nav .click{
+        font-family: 'Roboto', sans-serif;
+        font-size: 20px;
+        font-weight: 700;
+        color:#777777;
+        }
+
+        .site-nav a:hover{
+            color:#777777;
+            font-weight: 700;
+        }
+
+        /* 콘텐츠 */
+
+        .container{
+            width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .gnb-box{
+            width: 387px;
+            height: 315px;
+            margin-right: 20px;
+        }
+
+        .gnb{
+            width: 387px;
+            background-color: #F6F6F6;
+        }
+
+        .gnb>li{
+            cursor:pointer;
+            list-style: none;
+            padding: 0;
+            font-size: 40px;
+            margin-bottom: 20px;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 700;
+        }
+
+        .gnb>li a:hover{
+            color:#232323;
+        }
+
+        a{
+            text-decoration: none;
+            color: #BEBEBE;
+        }
+
+        .click{
+            color:#232323;
+        }
+
+        .swiper {
+        width: 794px;
+        height: 2117px;
+      }
+
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #F6F6F6;
+
+            /* Center slide text vertically */
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+        }
+
+        .swiper-slide img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .swiper-pagination-bullet {
+            width: 20px;
+            height: 20px;
+            text-align: center;
+            line-height: 20px;
+            font-size: 12px;
+            color: #fff;
+            opacity: 1;
+            background: #A0A0A0;
+        }
+
+        .swiper-pagination-bullet-active {
+            color: #fff;
+            background: #444444;
+        }
+
+        .box{
+            width: 794px;
+            height: 466px;
+
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 62px;
+        }
+
+            .wrap2{
+            width: 794px;
+        }
+
+        .img-cont{
+            width: 794px;
+            height: 400px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .first-box{
+            width: 387px;
+            height: 400px;
+            overflow: hidden;
+            margin-right: 20px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .first{
+            width: 387px;
+            height: 400px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            overflow: hidden;
+
+            -webkit-transform: scale(1);
+            transform: scale(1);
+            -webkit-transition: .5s ease-in-out;
+            transition: .5s ease-in-out;
+        }
+
+        .first:hover{
+            -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+        }
+
+        .second-box{
+            width: 387px;
+            height: 400px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .second{
+            width: 387px;
+            height: 400px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            overflow: hidden;
+
+            -webkit-transform: scale(1);
+            transform: scale(1);
+            -webkit-transition: .5s ease-in-out;
+            transition: .5s ease-in-out;
+        }
+
+        .second:hover{
+            -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+        }
+
+        .description{
+            width: 794px;
+            margin-top: 16px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: top;
+        }
+
+        .name:hover{
+            color:#93D1E6;
+        }
+
+        .name{
+            font-size: 20px;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 500;
+            color: #444444;
+
+            margin-bottom: 2px;
+            display: flex;
+        }
+
+        .sub{
+            font-size: 16px;
+            color: #636363;
+            font-family: 'Noto Sans KR', sans-serif;
+            font-weight: 400;
+
+            display: flex;
+        }
+
+        .price{
+            font-size: 16px;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 300;
+            color: #777777;
+
+            display: flex;
+        }
+
+
+        /* 푸터 */
+        footer{
+            color: #E2E2E2;
+            background-color: #444444;
+            width: 100%;
+            height: 300px;
+            margin-top: 110px;
+            padding-top: 25px;
+            padding-bottom: 25px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap:wrap;
+        }
+
+        .footA{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-bottom: 16px;
+
+            border-bottom: solid 1px #F0F0F0;
+        }
+
+        .footer-nav ul{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .footer-nav li{
+            list-style: none;
+        }
+
+        .footer-nav a{
+            text-decoration: none;
+            color: #E2E2E2;
+            font-size: 16px;
+            font-family: 'Noto Sans KR', sans-serif;
+            font-weight: 400;
+
+            margin-right: 24px;
+        }
+
+        .icons ul{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .icons li{
+            list-style: none;
+        }
+
+        .icons a{
+            margin-right: 4px;
+        }
+
+        .footB{
+            width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .footB p{
+            font-size: 12px;
+            font-family: 'Noto Sans KR', sans-serif;
+            font-weight: 400;
+
+            line-height: 24px;
+        }
+
+        .footC{
+            width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .site{
+            width: 200px;
+        }
+
+        .site ul{
+            list-style: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+
+
+    </style>
+</head>
+<body>
+<!-- 헤더 -->
+    <header>
+        <div class="site-header">
+        <a href="index.html" class="logo"><img src="https://i.postimg.cc/65GsQsWK/image.png" alt="travie logo"></a>
+
+        <nav class="site-nav">
+            <ul>
+                <li><a href="Trip.html">Trip</a></li>
+                <li><a class="click" href="Magazine.html">Magazine</a></li>
+                <li><a href="Newsletter.html">Newsletter</a></li>
+                <li><a href="About.html">About</a></li>
+            </ul>
+        </nav>
+      </div>
+    </header>
+
+<!-- 콘텐츠 -->
+
+    <div class="container">
+
+        <div class="gnb-box">
+            <ul class="gnb">
+                <li><a href="Magazine.html">ALL</a></li>
+                <li><a href="Magazine2.html">2022</a></li>
+                <li><a class="click" href="Magazine3.html">2021</a></li>
+                <li><a href="#">2020</a></li>
+                <li><a href="#">MORE</a></li>
+            </ul>
+        </div>
+
+        <!-- Swiper -->
+        <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+        <!-- 첫번째 -->
+        <div class="swiper-slide">
+            <div class="wrap">
+
+                <a href="#" class="box">
+                    <div class="img-cont">
+                        <div class="first-box">
+                            <img class="first" src="https://i.postimg.cc/yN86f70M/6.jpg" alt="잡지사진">
+                        </div>
+                        <div class="second-box"> 
+                            <img class="second" src="https://images.unsplash.com/photo-1620062290738-e2929b67ad19?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80" alt="잡지관련사진">
+                        </div>
+                    </div>
+                    <div class="description">
+                        <div class="text">
+                            <p class="name">Travie January 2022</p>
+                            <p class="sub">CZECH REPUBLIC I GUAM I 강남 갤러리 I 마포 마을 여행</p>
+                        </div>
+                        <p class="price">￦3,450</p>
+                    </div>
+                </a>
+
+                <a href="#" class="box">
+                    <div class="img-cont">
+                        <div class="first-box">
+                            <img class="first" src="https://images.unsplash.com/photo-1589196728426-4613a4992c42?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" alt="잡지관련사진">
+                        </div>
+                        <div class="second-box"> 
+                            <img class="second" src="https://i.postimg.cc/T1wrf88F/7.jpg" alt="잡지사진">
+                        </div>
+                    </div>
+                    <div class="description">
+                        <div class="text">
+                            <p class="name">Travie February 2022</p>
+                            <p class="sub">VARANASI I SAGA I MALDIVES I 강진</p>
+                        </div>
+                        <p class="price">￦3,450</p>
+                    </div>
+                </a>
+
+                <a href="#" class="box">
+                    <div class="img-cont">
+                        <div class="first-box">
+                            <img class="first" src="https://i.postimg.cc/wBpL3R8h/8.jpg" alt="잡지사진">
+                        </div>
+                        <div class="second-box"> 
+                            <img class="second" src="https://images.unsplash.com/photo-1560403442-d141ff60800d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="잡지관련사진">
+                        </div>
+                    </div>
+                    <div class="description">
+                        <div class="text">
+                            <p class="name">Travie March 2022</p>
+                            <p class="sub">혼행 I HONG KONG I CANADA I 강화도</p>
+                        </div>
+                        <p class="price">￦3,450</p>
+                    </div>
+                </a>
+
+                <a href="#" class="box">
+                    <div class="img-cont">
+                        <div class="first-box">
+                            <img class="first" src="https://images.unsplash.com/photo-1457269449834-928af64c684d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80" alt="잡지관련사진">
+                        </div>
+                        <div class="second-box"> 
+                            <img class="second" src="https://i.postimg.cc/NM0DDCGs/9.jpg" alt="잡지사진">
+                        </div>
+                    </div>
+                    <div class="description">
+                        <div class="text">
+                            <p class="name">Travie April 2022</p>
+                            <p class="sub">SPRING IN SEOUL I NEPAL I 제주도 I LISBON</p>
+                        </div>
+                        <p class="price">￦3,450</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <!-- 두번째 -->
+            <div class="swiper-slide">
+                <div class="wrap">
+
+                    <a href="#" class="box">
+                        <div class="img-cont">
+                            <div class="first-box">
+                                <img class="first" src="https://i.postimg.cc/HxP6mzpj/8.jpg" alt="잡지사진">
+                            </div>
+                            <div class="second-box"> 
+                                <img class="second" src="https://images.unsplash.com/photo-1575519627029-6fb7d4bbaf46?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="잡지관련사진">
+                            </div>
+                        </div>
+                        <div class="description">
+                            <div class="text">
+                                <p class="name">Travie January 2022</p>
+                                <p class="sub">CZECH REPUBLIC I GUAM I 강남 갤러리 I 마포 마을 여행</p>
+                            </div>
+                            <p class="price">￦3,450</p>
+                        </div>
+                    </a>
+
+                    <a href="#" class="box">
+                        <div class="img-cont">
+                            <div class="first-box">
+                                <img class="first" src="https://images.unsplash.com/photo-1543690261-bdd28350060c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" alt="잡지관련사진">
+                            </div>
+                            <div class="second-box"> 
+                                <img class="second" src="https://i.postimg.cc/TwnzYB4h/9.jpg" alt="잡지사진">
+                            </div>
+                        </div>
+                        <div class="description">
+                            <div class="text">
+                                <p class="name">Travie February 2022</p>
+                                <p class="sub">VARANASI I SAGA I MALDIVES I 강진</p>
+                            </div>
+                            <p class="price">￦3,450</p>
+                        </div>
+                    </a>
+
+                    <a href="#" class="box">
+                        <div class="img-cont">
+                            <div class="first-box">
+                                <img class="first" src="https://i.postimg.cc/1RJFYXv7/10.jpg" alt="잡지사진">
+                            </div>
+                            <div class="second-box"> 
+                                <img class="second" src="https://images.unsplash.com/photo-1508264165352-258db2ebd59b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=388&q=80" alt="잡지관련사진">
+                            </div>
+                        </div>
+                        <div class="description">
+                            <div class="text">
+                                <p class="name">Travie March 2022</p>
+                                <p class="sub">혼행 I HONG KONG I CANADA I 강화도</p>
+                            </div>
+                            <p class="price">￦3,450</p>
+                        </div>
+                    </a>
+
+                    <a href="#" class="box">
+                        <div class="img-cont">
+                            <div class="first-box">
+                                <img class="first" src="https://images.unsplash.com/photo-1551970634-747846a548cb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="잡지관련사진">
+                            </div>
+                            <div class="second-box"> 
+                                <img class="second" src="https://i.postimg.cc/xT6WCvtG/17908330.jpg" alt="잡지사진">
+                            </div>
+                        </div>
+                        <div class="description">
+                            <div class="text">
+                                <p class="name">Travie April 2022</p>
+                                <p class="sub">SPRING IN SEOUL I NEPAL I 제주도 I LISBON</p>
+                            </div>
+                            <p class="price">￦3,450</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+        <!-- 세번째 -->
+            <div class="swiper-slide">
+                <div class="wrap">
+
+                    <a href="#" class="box">
+                        <div class="img-cont">
+                            <div class="first-box">      
+                                <img class="first" src="https://i.postimg.cc/52JSQzbx/2.png" alt="잡지사진">
+                            </div>
+                            <div class="second-box">
+                                <img class="second" src="https://i.postimg.cc/mrzkbdJh/lyndon-li-zr-T1tjnx-JKQ-unsplash.jpg" alt="잡지관련사진">
+                            </div>
+                        </div>
+                        <div class="description">
+                            <div class="text">
+                                <p class="name">Travie January 2022</p>
+                                <p class="sub">CZECH REPUBLIC I GUAM I 강남 갤러리 I 마포 마을 여행</p>
+                            </div>
+                            <p class="price">￦3,450</p>
+                        </div>
+                    </a>
+
+                    <a href="#" class="box">
+                        <div class="img-cont">
+                            <div class="first-box"> 
+                                <img class="first" src="https://i.postimg.cc/v8czJ9QB/mourad-saadi-ZXbe-Oq-F1-NFQ-unsplash.jpg" alt="잡지관련사진">
+                            </div>
+                            <div class="second-box">
+                                <img class="second" src="https://i.postimg.cc/dQyCR9s8/3.png" alt="잡지사진">
+                            </div>
+                        </div>
+                        <div class="description">
+                            <div class="text">
+                                <p class="name">Travie February 2022</p>
+                                <p class="sub">VARANASI I SAGA I MALDIVES I 강진</p>
+                            </div>
+                            <p class="price">￦3,450</p>
+                        </div>
+                    </a>
+
+                    <a href="#" class="box">
+                        <div class="img-cont">
+                            <div class="first-box">
+                                <img class="first" src="https://i.postimg.cc/cHcVP3ZT/4.png" alt="잡지관련사진">
+                            </div> 
+                            <div class="second-box">   
+                                <img class="second" src="https://i.postimg.cc/Y2RHs5Ck/image.jpg" alt="잡지사진">
+                            </div>
+                        </div>
+                        <div class="description">
+                            <div class="text">
+                                <p class="name">Travie March 2022</p>
+                                <p class="sub">혼행 I HONG KONG I CANADA I 강화도</p>
+                            </div>
+                            <p class="price">￦3,450</p>
+                        </div>
+                    </a>
+
+                    <a href="#" class="box">
+                        <div class="img-cont">
+                            <div class="first-box">
+                                <img class="first" src="https://i.postimg.cc/bwNHR2Fp/aj-Mcs-Nra2-VRQQ-unsplash.jpg" alt="잡지관련사진">
+                            </div>
+                            <div class="second-box"> 
+                                <img class="second" src="https://i.postimg.cc/kGQFTNmX/5.png" alt="잡지사진">
+                            </div>
+                        </div>
+                        <div class="description">
+                            <div class="text">
+                                <p class="name">Travie April 2022</p>
+                                <p class="sub">SPRING IN SEOUL I NEPAL I 제주도 I LISBON</p>
+                            </div>
+                            <p class="price">￦3,450</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+        <div class="swiper-pagination"></div>
+        </div>
+    </div>
+
+        <!-- Swiper JS -->
+        <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+        <!-- Initialize Swiper -->
+        <script>
+        var swiper = new Swiper(".mySwiper", {
+            pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+            renderBullet: function (index, className) {
+                return '<span class="' + className + '">' + (index + 1) + "</span>";
+            },
+            },
+        });
+        </script>
+    
+
+<!-- 푸터 -->
+    <footer>
+        <div class="footA">
+
+            <nav class="footer-nav">
+                <ul>
+                    <li><a href="#">회사소개</a></li>
+                    <li><a href="#">기사제보</a></li>
+                    <li><a href="#">광고문의</a></li>
+                    <li><a href="#">개인정보처리방침</a></li>
+                    <li><a href="#">이용약관</a></li>
+                    <li><a href="#">청소년보호정책</a></li>
+                    <li><a href="#">저작권보호정책</a></li>
+                    <li><a href="#">RSS</a></li>
+                </ul>
+            </nav>
+
+            <nav class="icons">
+                <ul>
+                    <li><a href="#"><img src="https://i.postimg.cc/c1BsjWkr/Frame-18.png" alt="Facebook" width="30px" height="30px"></a></li>
+                    <li><a href="#"><img src="https://i.postimg.cc/MKXpj4tH/Frame-19.png" alt="brunch" width="30px" height="30px"></a></li>
+                    <li><a href="#"><img src="https://i.postimg.cc/jq3sKcKb/Frame-20.png" alt="naver" width="30px" height="30px"></a></li>
+                    <li><a href="#"><img src="https://i.postimg.cc/gJkWbXTj/Frame-21.png" alt="youtube" width="30px" height="30px"></a></li>
+                    <li><a href="#"><img src="https://i.postimg.cc/43w3cgCK/Frame-22.png" alt="insta" width="30px" height="30px"></a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="footB">
+            <p>서울특별시 중구 무교로 16 (주)여행신문<br>
+                대표전화: 02-757-8980 I 팩스: 02-757-8983<br>
+                법인명: (주)여행신문 I 등록번호: 서울 라 00311 (2009-10-13)<br>
+                발행·편집인: 한정훈 I 대표자명: 김기남 I 청소년보호책임자:  전홍렬</p>
+        </div>
+        <div class="footC">
+            <nav class="site">
+                <ul>
+                    <li><a href="#"><img src="https://i.postimg.cc/j5bHh1X0/image.png" alt="site1"></a></li>
+                    <li><a href="#"><img src="https://i.postimg.cc/VNmfzBsB/image.png" alt="site1"></a></li>
+                </ul>
+            </nav>
+        </div>
+</footer>
+    
+</body>
+</html>

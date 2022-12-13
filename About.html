@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+
+    <style>
+       @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&family=Roboto:wght@500;700;900&display=swap');
+
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        body{
+            background-color: #F6F6F6;
+        }
+
+        .logo{
+            margin-right: 48px;
+        }
+
+        header{
+            width: 100%;
+            height: 60px;
+            background-color: rgb(255,255,255,0.2);
+            backdrop-filter: blur(5px);
+
+            font-family: 'Roboto', sans-serif;
+            font-size: 20px;
+            font-weight: 500;
+            color: #D0D0D0;
+            box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.1);
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            margin-bottom: 206px;
+        }
+
+        .site-header{
+            width: 1200px;
+            height: 24px;
+            margin-left: auto;
+            margin-right: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .site-nav ul{
+            list-style: none;
+            display: flex;
+        }
+
+        .site-nav a{
+            text-decoration: none;
+            color: #D0D0D0;
+            padding-right: 24px;
+        }
+
+        .site-nav .click{
+            font-family: 'Roboto', sans-serif;
+            font-size: 20px;
+            font-weight: 700;
+            color:#777777;
+        }
+
+        .site-nav a:hover{
+            color:#777777;
+            font-weight: 700;
+        }
+
+        .conA{
+            width: 1200px;
+            height: 2500px;
+            background-color: #fff;
+            margin-left: auto;
+            margin-right: auto;
+            padding-top: 104px;
+            border-radius: 10px;
+
+            box-shadow: 0px 4px 50px 2px rgba(0,0,0,0.25);
+        }
+
+        .contents{
+            margin-left: 102px;
+            margin-right: 102px;
+        }
+
+        .line{
+            width: 81px;
+            height: 8px;
+            background-color: #93D1E6;
+            margin-bottom: 12px;
+        }
+
+        h1{
+            font-size: 64px;
+            margin-bottom: 35px;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 900;
+            color:#232323;
+        }
+
+        .HL{
+            color:#444444;
+            font-size: 16px;
+            font-family: 'Noto Sans KR', sans-serif;
+            font-weight: 700;
+            background: linear-gradient(to top,#93D1E6 40%, transparent 40%);
+        }
+
+        .explain{
+            color:#777777;
+            font-size: 16px;
+            font-family: 'Noto Sans KR', sans-serif;
+            font-weight: 400;
+            line-height: 160%;
+        }
+
+        .vision{
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        h2{
+            font-size: 36px;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 700;
+            margin-top: 100px;
+            color:#232323;
+            margin-bottom: 44px;
+        }
+
+        .HL2{
+            background: linear-gradient(to top,#93D1E6 30%, transparent 30%);
+        }
+
+        table{
+            text-align: left;
+            border-collapse: separate;
+            border-spacing: 20px;
+            line-height: 1.6;
+        }
+
+        table th{
+            width: 224px;
+            vertical-align: top;
+            padding-top: 14px;
+            font-size: 24px;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 500;
+            color: #444444;
+            border-top:solid 2px #D9D9D9;
+
+            vertical-align: center;
+        }
+
+        table td{
+            width: 710px;
+            font-size: 16px;
+            font-family: 'Noto Sans KR', sans-serif;
+            font-weight: 400;
+            color: #777777;
+            padding-top: 17px;
+
+            border-top:solid 1px #D9D9D9;
+            margin-left: 20px;
+            vertical-align: center;
+        }
+
+        footer{
+            color: #E2E2E2;
+            background-color: #444444;
+            width: 100%;
+            height: 300px;
+            margin-top: 110px;
+            padding-top: 25px;
+            padding-bottom: 25px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap:wrap;
+        }
+
+        .footA{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-bottom: 16px;
+
+            border-bottom: solid 1px #F0F0F0;
+        }
+
+        .footer-nav ul{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .footer-nav li{
+            list-style: none;
+        }
+
+        .footer-nav a{
+            text-decoration: none;
+            color: #E2E2E2;
+            font-size: 16px;
+            font-family: 'Noto Sans KR', sans-serif;
+            font-weight: 400;
+
+            margin-right: 24px;
+        }
+
+        .icons ul{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .icons li{
+            list-style: none;
+        }
+
+        .icons a{
+            margin-right: 4px;
+        }
+
+        .footB{
+            width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .footB p{
+            font-size: 12px;
+            font-family: 'Noto Sans KR', sans-serif;
+            font-weight: 400;
+
+            line-height: 24px;
+        }
+
+        .footC{
+            width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .site{
+            width: 200px;
+        }
+
+        .site ul{
+            list-style: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        h3{
+            font-size: 128px;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 900;
+            color: rgba(179,223,237,0.5);
+            text-align: center;
+
+            position: absolute;
+            top:170px;
+            left:50%;
+            transform: translate(-50%,0%);
+            z-index: -1;
+          }
+
+        .history .cont ol{
+            list-style: none;
+          }
+
+        .history h4 {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 900;
+            position: relative; 
+            font-size: 40px;
+            color: #4D7A88; 
+            line-height: 1;
+          }
+          
+        .history h4:before {
+           content:""; 
+           position: absolute;
+           left:-48px; 
+           top:50%; 
+           transform: translateY(-50%);
+           width: 17px; 
+           height: 17px; 
+           border-radius: 100%;
+           background:#4D7A88; 
+           box-sizing: border-box;
+          }
+
+        .history .cont {
+            position: relative; 
+            padding: 0 0 0 48px;
+        }
+
+        .history .cont:before { 
+            content:""; 
+            position:absolute; 
+            left:8px; 
+            top:0;
+            width: 2px; 
+            height:100%; 
+            background:#ddd;
+        }
+
+        .history .cont:first-child:before { 
+            top:10px; 
+            height:calc(100% - 10px);
+        }
+
+        .history ol { 
+            padding: 20px 0 74px; 
+        }
+
+        .history li {
+            font-size: 20px; 
+            color:#777777; 
+            line-height: 36px;  
+            font-family: 'Noto Sans KR', sans-serif;
+            font-weight: 400;
+        }
+
+        .history .strong{
+            font-size: 20px;
+            font-family: 'Noto Sans KR', sans-serif;
+            font-weight: 900;
+            color:#444444;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="site-header">
+        <a href="index.html" class="logo"><img src="https://i.postimg.cc/65GsQsWK/image.png" alt="travie logo"></a>
+
+        <nav class="site-nav">
+            <ul>
+                <li><a href="Trip.html">Trip</a></li>
+                <li><a href="Magazine.html">Magazine</a></li>
+                <li><a href="Newsletter.html">Newsletter</a></li>
+                <li><a class="click" href="About.html">About</a></li>
+            </ul>
+        </nav>
+      </div>
+    </header>
+
+    <h3>Tavie is</h3>
+
+    <section class="conA">
+
+        <div class="container">
+
+            <div class="contents">
+              <div class="line"></div>
+              <h1>Travie is</h1>
+              <p class="explain"><span class="HL"><트래비>는 1992년에 창간한 여행업계 전문지 <여행신문 Korea Travel Times>의 자매지입니다.</span>
+<br><br><트래비>는 여행을 통해 세상의 다양한 문화를 만나고 싶은 현명한 여행소비자를 위한 잡지입니다. 인종, 종교, 이념의 대립이 여전한 이 시대에 갈등을 푸는 열쇠가 ‘여행’에 있을 수 있다고 <트래비>는 믿습니다. 타인의 문화를 이해하게 된다면 ‘나’를 위한 여행은 ‘우리’를 위한 여행으로 넓어집니다. 그러면 ‘여행’도 세상의 평화와 정의를 위한 행위가 될 수 있을 테니까요. 그 행위는 지속가능한 여행개발과 건전한 여행 소비로부터 시작됩니다. <트래비>는 한국여행문화와 여행산업 발전에 책임을 가진 언론사의 정신으로 ‘여행Travel’과 ‘삶Vie(Life)’의 이야기를 전하겠습니다.</p>
+              <div class="vision">              
+                <img src="https://i.postimg.cc/FKZL04r2/image.png" alt="vision">
+              </div> 
+            </div>
+
+             <div class="contents">
+                <h2><span class="HL2">COMPANY OVERVIEW</span></h2>
+                <table>
+                    <tr>
+                        <th scope="row">COMPANY</th>
+                        <td>(주)여행신문</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">SINCE</th>
+                        <td>1992년 7월</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">CEO</th>
+                        <td>김기남</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">ADDRESS</th>
+                        <td>서울특별시 중구 무교로 16 대한체육회빌딩 5층</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">BUSINESS</th>
+                        <td>국내 최초 여행 전문 주간신문 ‘여행신문’ 발간(1992년 7월 10일 창간)<br>
+                            순수 여행잡지 월간 ‘트래비’발간(2005년 5월 창간)<br>
+                            모바일 콘텐츠 유통 (네이버 여행플러스, 네이버 포스트, 다음카카오 등)<br>
+                            외부 출판물 제작(관광청 가이드북, 기내지, 사내외보, 브로셔 등)<br>
+                            콘텐츠 판매(SK텔레콤 어플리케이션, 현대카드 웹콘텐츠, 중국고속철도 등)<br>
+                            UNWTO, WTTC 등 국제행사 공식 미디어<br>
+                            관광 관련 각종 설문조사 및 세미나 개최</td>
+                    </tr>
+                </table>
+             </div>
+
+             <div class="contents">
+                <h2><span class="HL2">HISTORY</span></h2>
+
+                <div class="history">
+                    <div class="cont">
+                        <h4>2010's</h4>
+                        <ol>
+                            <li><span class="strong">2019</span>&nbsp;&nbsp;&nbsp;&nbsp;모두투어 웹진 제작</li>
+                            <li><span class="strong">2016~2017</span>&nbsp;&nbsp;&nbsp;&nbsp;문화체육관광부 선정 ‘우수 콘텐츠 잡지</li>
+                            <li><span class="strong">2013~2017</span>&nbsp;&nbsp;&nbsp;&nbsp;과학기술정보통신부 주최 ‘굿 콘텐츠서비스 인증’ 3회 연속 획득</li>
+                            <li><span class="strong">2013</span>&nbsp;&nbsp;&nbsp;&nbsp;콘텐츠 제공 서비스 품질 인증</li>
+                            <li><span class="strong">2012</span>&nbsp;&nbsp;&nbsp;&nbsp;대련-하얼빈 구간 중국 고속철도 공식 잡지 콘텐츠 수출</li>
+                            <li><span class="strong">2011</span>&nbsp;&nbsp;&nbsp;&nbsp;티웨이항공 기내지 제작</li>
+                        </ol>
+                    </div>
+                    <div class="cont">
+                        <h4>2000's</h4>
+                        <ol>
+                            <li><span class="strong">2007</span>&nbsp;&nbsp;&nbsp;&nbsp;ASTA 제주총회 공식 일간지 발행</li>
+                            <li><span class="strong">2005</span>&nbsp;&nbsp;&nbsp;&nbsp;내나라여행박람회 공식 미디어 선정</li>
+                            <li><span class="strong">2005</span>&nbsp;&nbsp;&nbsp;&nbsp;일반소비자 대상 여행정보 매거진 트래비 Travie 창간</li>
+                            <li><span class="strong">2004</span>&nbsp;&nbsp;&nbsp;&nbsp;본지 문화관광부장관 표창</li>
+                        </ol>
+                    </div>
+                    <div class="cont">
+                        <h4>1990's</h4>
+                        <ol>
+                            <li><span class="strong">1997</span>&nbsp;&nbsp;&nbsp;&nbsp;여행전문신문 국내 최초로 웹사이트 오픈</li>
+                            <li><span class="strong">1992</span>&nbsp;&nbsp;&nbsp;&nbsp;한국여행신문사 창립</li>
+                        </ol>
+                    </div>
+                </div>
+        </div>
+
+    </section>
+
+    <footer>
+            <div class="footA">
+
+                <nav class="footer-nav">
+                    <ul>
+                        <li><a href="#">회사소개</a></li>
+                        <li><a href="#">기사제보</a></li>
+                        <li><a href="#">광고문의</a></li>
+                        <li><a href="#">개인정보처리방침</a></li>
+                        <li><a href="#">이용약관</a></li>
+                        <li><a href="#">청소년보호정책</a></li>
+                        <li><a href="#">저작권보호정책</a></li>
+                        <li><a href="#">RSS</a></li>
+                    </ul>
+                </nav>
+
+                <nav class="icons">
+                    <ul>
+                        <li><a href="#"><img src="https://i.postimg.cc/c1BsjWkr/Frame-18.png" alt="Facebook" width="30px" height="30px"></a></li>
+                        <li><a href="#"><img src="https://i.postimg.cc/MKXpj4tH/Frame-19.png" alt="brunch" width="30px" height="30px"></a></li>
+                        <li><a href="#"><img src="https://i.postimg.cc/jq3sKcKb/Frame-20.png" alt="naver" width="30px" height="30px"></a></li>
+                        <li><a href="#"><img src="https://i.postimg.cc/gJkWbXTj/Frame-21.png" alt="youtube" width="30px" height="30px"></a></li>
+                        <li><a href="#"><img src="https://i.postimg.cc/43w3cgCK/Frame-22.png" alt="insta" width="30px" height="30px"></a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="footB">
+                <p>서울특별시 중구 무교로 16 (주)여행신문<br>
+                    대표전화: 02-757-8980 I 팩스: 02-757-8983<br>
+                    법인명: (주)여행신문 I 등록번호: 서울 라 00311 (2009-10-13)<br>
+                    발행·편집인: 한정훈 I 대표자명: 김기남 I 청소년보호책임자:  전홍렬</p>
+            </div>
+            <div class="footC">
+                <nav class="site">
+                    <ul>
+                        <li><a href="#"><img src="https://i.postimg.cc/j5bHh1X0/image.png" alt="site1"></a></li>
+                        <li><a href="#"><img src="https://i.postimg.cc/VNmfzBsB/image.png" alt="site1"></a></li>
+                    </ul>
+                </nav>
+            </div>
+    </footer>
+    
+</body>
+</html>
